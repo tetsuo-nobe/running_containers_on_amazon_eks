@@ -5,7 +5,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: webserver-deployment
+    app: webserver
   ports:
     - nodePort: 30000
       protocol: TCP
