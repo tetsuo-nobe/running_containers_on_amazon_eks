@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: my-deployment
   labels:
-    app: my-webserver-deployment
+    app: webserver-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: my-webserver
+      app: webserver
   template:
     metadata:
       labels:
-        app: my-webserver
+        app: webserver
       spec:
         containers:
         - name:  nginx-container

@@ -4,7 +4,7 @@ metadata:
   name: my-service
 spec:
   selector:
-    app: my-deployment-deployment
+    app: webserver-deployment
   port:
     - protocol: TCP
       port: 80

@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-nginx
+  name: my-simple-pod
   labes:
-    app: my-webserver
+    app: webserver
 spec:
   containers:
   - name:  nginx-container
