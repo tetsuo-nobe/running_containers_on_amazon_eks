@@ -13,7 +13,9 @@ spec:
     metadata:
       labels:
         app: webserver
-      spec:
-        containers:
-        - name:  nginx-container
-          image: nginx
+    spec:
+      containers:
+      - name:  httpd-container
+        image: httpd
+        ports:
+        - containerPort: 80
