@@ -6,7 +6,7 @@ spec:
   type: NodePort
   selector:
     app: webserver-deployment
-  port:
+  ports:
     - nodePort: 30000
       protocol: TCP
       port: 8080
