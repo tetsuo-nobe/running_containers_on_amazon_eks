@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod-uses-configmap
+spec:
+  containers:
+    - name: budybox-container
+      image: busybox
+      command: [ "/bin/sh", "-c", "env" ]
+      env: 
+        - name: MODE
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap 
+              key: mode 
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: my-configmap 
+              key: log_level
+              optional: true
+      envFrom: 
+        - configMapRef:
+            name: my-configmap 
