@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-pod-uses-configmap
+  name: my-pod-configmap
 spec:
   containers:
     - name: budybox-container
@@ -21,4 +21,5 @@ spec:
               optional: true
       envFrom: 
         - configMapRef:
-            name: my-configmap 
+            name: my-configmap
+  restartPolicy: Never
