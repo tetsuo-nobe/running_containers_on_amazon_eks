@@ -1,0 +1,25 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: config-public-cluster
+  region: ap-northeast-1
+managedNodeGroups:
+  - name: config-public-nodes
+    instanceType: t3.small
+    desiredCapacity: 3
+    privateNetworking: true
+vpc:
+  subnets:
+    public:
+      ap-northeast-1a:
+        id: "subnet-0bf67a909df040067"
+      ap-northeast-1c:
+        id: "subnet-02e5f4bc8c5ef2242"
+    private:
+      ap-northeast-1a:
+        id: "subnet-0a47133442bf445ab"
+      ap-northeast-1c:
+        id: "subnet-0b0ccfcf02b15011e"
+  clusterEndpoints:
+    publicAccess:  true
+    privateAccess: false
