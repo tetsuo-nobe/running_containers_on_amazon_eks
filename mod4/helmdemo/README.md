@@ -17,7 +17,7 @@
 * Chart.yamlの確認
   - このフォルダにあるChart.yamlを参照
 * Deploymentの定義ファイルの確認
-  - このフォルダにあるdeployment/hello-deployment.yamlを参照
+  - このフォルダにあるtemplates/deployment/hello-deployment.yamlを参照
 * values.yamlの確認
   - このフォルダにあるvalues.yamlを参照
   - レプリカ 2、コンテナイメージのバージョン 1を指定している。
@@ -41,7 +41,7 @@
 * values.yamlの内容を変更してバージョン2のコンテナイメージを指定する
 * アプリケーションをバージョン2にアップグレードする
   ```
-  helm upgrade hello-app ~/environment/helmdemo
+  helm upgrade hello-app helmdemo/
   ```
 * アプリケーションのステータスの確認
   ```
