@@ -11,7 +11,7 @@
 * サンプルを取得して移動
   ```
   git clone https://github.com/tetsuo-nobe/running_containers_on_amazon_eks
-  cd unning_containers_on_amazon_eks/mod4
+  cd running_containers_on_amazon_eks/mod4
 
   ```
 * Chart.yamlの確認
