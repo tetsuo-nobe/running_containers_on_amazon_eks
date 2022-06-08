@@ -4,13 +4,18 @@
 
 * 講師よりガイドいたします。
 
-## 事前準備
-
-* ユーザーのホームディレクトリに移動して、git をインストールします。
+## Minikube のインストール
+* ユーザーのホームディレクトリに移動し、Dockerがインストールされていることを確認します。
   ```
   cd
   pwd
-  sudo yum install git -y
+  docker -v
+  ```
+* Minikube をインストールします。
+  ```
+  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+  sudo yum install -y conntrack
   ```
 
 ## Minnikube の起動
