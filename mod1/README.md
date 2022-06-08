@@ -25,6 +25,11 @@
   minikube start --vm-driver=none
   minikube status
   ```
+* シンボリックリンクを使って kubectl を使うようにします。
+  - 参考: [minikube の handbook の kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
+  ```
+  sudo ln -s $(which minikube) /usr/local/bin/kubectl
+  ```
 
 ## ワーク用リポジトリの取得
 
