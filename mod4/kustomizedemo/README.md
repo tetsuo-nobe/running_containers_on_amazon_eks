@@ -23,13 +23,13 @@
   kubectl kustomize -f ./overlay/dev
 
   ```
-　- stage や prod についても同様に確認
+  - stage や prod についても同様に確認
 * 次のコマンドでdev環境用の Deploymentを作成
   ```
   kubectl create -k ./overlay/dev
 
   ```
-　- stage や prod についても同様に作成
+  - stage や prod についても同様に作成
 * 作成された Deployment や Pod を確認
   ```
   kubectl get pods,deployments
@@ -39,7 +39,7 @@
   kubectl delete -k ./overlay/dev
 
   ```
-　- stage や prod についても同様に削除
+  - stage や prod についても同様に削除
   
 
 
