@@ -82,7 +82,7 @@
 
 ## ConfigMapの操作
 
-* alias を使って、キータイプ量を減らす
+* alias を使って、キータイプ量を減らすようにします。
   - キータイプの効率を考慮し、以降は k で統一します。
 
   ```
@@ -188,17 +188,17 @@
 
 * Namespaceのマニフェストを確認します。  
   ```
-  cat secret.yaml
+  cat namespace.yaml
   ```
 
 * Namespaceを作成します。
   ```
-  k create -f secret.yaml
+  k create -f namespace.yaml
   ```
 
 * Namespaceをステータスを確認します。
   ```
-  k get secrets
+  k get namespaces
   ```
 * Namespaceを指定しているPodのマニフェストを確認します。
   ```
