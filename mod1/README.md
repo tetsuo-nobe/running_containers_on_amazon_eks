@@ -1,4 +1,4 @@
-# kubectl を試用して kubernetes のリソースを操作してみよう
+# kubectl を使用して kubernetes のリソースを操作してみよう
 
 ## 環境への接続について
 
@@ -31,7 +31,7 @@
 
 ---
 
-### Pod の操作
+## Pod の操作
 
 * Podのマニフェストを確認します。
   ```
@@ -70,7 +70,7 @@
   ``` 
 ---
 
-### ConfigMapの操作
+## ConfigMapの操作
 
 * alias を使って、キータイプ量を減らす
   - キータイプの効率を考慮し、以降は k で統一します。
@@ -126,7 +126,7 @@
 
 ---
 
-### Secretの操作
+## Secretの操作
 
 * Secretのマニフェストを確認します。  
   ```
@@ -174,7 +174,7 @@
   ```
 ---
 
-### Namespaceの操作
+## Namespaceの操作
 
 * Namespaceのマニフェストを確認します。  
   ```
@@ -215,7 +215,7 @@
 
 ---
 
-### Deploymentの操作
+## Deploymentの操作
 
 * Deploymentのマニフェストを確認します。  
   ```
@@ -284,7 +284,7 @@
 
 ---
 
-### Serviceの操作
+## Serviceの操作
 
 * Deploymentを作成します。
   ```
