@@ -5,7 +5,7 @@ env:
     AWS_DEFAULT_REGION: ap-northeast-1
     IMAGE_REPO_NAME: node-web-hello
     IMAGE_TAG: latest
-    AWS_ACCOUNT_ID: 146230907561  # 通常はParameter Store か Secrets Managerから取得
+    AWS_ACCOUNT_ID: 000000000000  # 通常はParameter Store か Secrets Managerから取得
 phases:
   pre_build:
     commands:
