@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xray-deployment
+  namespace: default
+  labels:
+    app: xray-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-web-xray
+  template:
+    metadata:
+      labels:
+        app: python-web-xray
+    spec:
+      containers:
+      - name:  python-web-xray
+        image: tnobe/python-web-xray
+        ports:
+        - containerPort: 8000
+        env:
+        - name: AWS_XRAY_DAEMON_ADDRESS
+          value: xray-service.default:2000
+        
