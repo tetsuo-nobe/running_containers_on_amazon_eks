@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xray-deployment
+  namespace: default
+  labels:
+    app: xray-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-web-xray
+  template:
+    metadata:
+      labels:
+        app: python-web-xray
+    spec:
+      serviceAccountName: xray-daemon
+      containers:
+      - name:  python-web-xray
+        image: tnobe/python-web-xray
+        ports:
+        - containerPort: 8000
+        env:
+        - name: AWS_XRAY_DAEMON_ADDRESS
+          value: localhost:2000
+      - name: xray-daemon
+        image: amazon/aws-xray-daemon
+        command: ["/usr/bin/xray","-o","-n","ap-northeast-1"]
+        resources:
+          requests:
+            cpu: 256m
+            memory: 32Mi
+          limits:
+            cpu: 512m
+            memory: 64Mi
