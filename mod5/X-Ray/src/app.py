@@ -29,12 +29,17 @@ def index():
 
 @app.route('/<name>')
 def hello(name):
+    #
+    return render_template('hello.html', title='Hello Page', name=name)
+    
+@app.route('/sqs/<message>')
+def sendMessage(message):
     # キューの名前を指定してインスタンスを取得
     try:
       sqs = boto3.resource('sqs', region_name="ap-northeast-1")
       qname = 'Demo-XRay-Q'
       queue = sqs.get_queue_by_name(QueueName=qname)
-      queue.send_message(MessageBody=name)
+      queue.send_message(MessageBody=message)
     except NoCredentialsError as nocrederr:
       app.logger.error("!!!! InvalidCredentials !!!!")
       app.logger.error(nocrederr)
@@ -47,7 +52,8 @@ def hello(name):
       app.logger.error('!!!! Exception !!!!')
       app.logger.error(ex)
     #
-    return render_template('hello.html', title='Hello Page', name=name)
+    return render_template('result.html', title='Result Page', message=message)
 
 if __name__ == "__main__":
+  app.logger.info('---- start __main__ ----')
   app.run(debug=True, host='0.0.0.0', port=8000)
