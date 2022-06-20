@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment-pdb
+  labels:
+    app: my-app-deployment-pdb
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app-pdb
+  template:
+    metadata:
+      labels:
+        app: my-app-pdb
+    spec:
+      containers:
+      - name:  nginx-container
+        image: nginx
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 90 # READYになるまで約90秒かかるようにする
+        
