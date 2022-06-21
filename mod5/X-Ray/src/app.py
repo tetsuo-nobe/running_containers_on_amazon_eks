@@ -16,11 +16,13 @@ patch(['boto3'])
 
 app = Flask(__name__)
 app.logger.setLevel(logging.INFO)
-
 #
 xray_recorder.configure(service='python-web-xray')
 XRayMiddleware(app, xray_recorder)
 #
+region = os.environ['REGION']
+qname = os.environ['QUEUE_NAME']
+
 
 @app.route('/')
 def index():
@@ -36,8 +38,7 @@ def hello(name):
 def sendMessage(message):
     # キューの名前を指定してインスタンスを取得
     try:
-      sqs = boto3.resource('sqs', region_name="ap-northeast-1")
-      qname = 'Demo-XRay-Q'
+      sqs = boto3.resource('sqs', region_name=region)
       queue = sqs.get_queue_by_name(QueueName=qname)
       queue.send_message(MessageBody=message)
     except NoCredentialsError as nocrederr:
@@ -56,4 +57,6 @@ def sendMessage(message):
 
 if __name__ == "__main__":
   app.logger.info('---- start __main__ ----')
+  app.logger.info(region)
+  app.logger.info(qname)
   app.run(debug=True, host='0.0.0.0', port=8000)
