@@ -28,6 +28,8 @@
 * rback-lookup コマンドで確認
   ```
   rbac-lookup -k group
+
+  kubectl get clusterroles cluster-admin -o yaml
   ```
 * system:masters グループに cluster-admin ロールがバインドされていることがわかる
 
