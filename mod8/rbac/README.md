@@ -80,7 +80,7 @@
   ls -la  ~/.kube
   cat ~/.kube/config
   ```
-*　EKSクラスタに接続できることを確認
+* EKSクラスタに接続できることを確認
    ```
    kubectl get all
    ```
