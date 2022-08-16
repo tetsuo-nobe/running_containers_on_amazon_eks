@@ -5,13 +5,13 @@
 * 講師よりガイドいたします。
 
 ## Minikube のインストール
-* ユーザーのホームディレクトリに移動し、Dockerがインストールされていることを確認します。
+1. ユーザーのホームディレクトリに移動し、Dockerがインストールされていることを確認します。
   ```
   cd
   pwd
   docker -v
   ```
-* Minikube をインストールします。
+1. Minikube をインストールします。
   ```
   curl -LO https://github.com/kubernetes/minikube/releases/download/v1.25.2/minikube-linux-amd64
   sudo install minikube-linux-amd64 /usr/local/bin/minikube
@@ -20,12 +20,12 @@
 
 ## Minnikube の起動
 
-* Minikube を起動してステータスを確認します。 
+1. Minikube を起動してステータスを確認します。 
   ```
   minikube start --vm-driver=none
   minikube status
   ```
-* シンボリックリンクで kubectl を使えるようにします。
+1. シンボリックリンクで kubectl を使えるようにします。
   - 参考: [minikube の handbook の kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
   ```
   sudo ln -s $(which minikube) /usr/local/bin/kubectl
@@ -33,7 +33,7 @@
 
 ## ワーク用リポジトリの取得
 
-* ワーク用リポジトリをクローンして移動します。
+1. ワーク用リポジトリをクローンして移動します。
   ```
   git clone https://github.com/tetsuo-nobe/running_containers_on_amazon_eks.git
   cd running_containers_on_amazon_eks/mod1
@@ -43,38 +43,38 @@
 
 ## Pod の操作
 
-* Podのマニフェストを確認します。
+1. Podのマニフェストを確認します。
   ```
   cat pod-httpd.yaml
   ```
-* Podを作成します。
+1. Podを作成します。
   ```
   kubectl create -f pod-httpd.yaml
   ```
-* Podのステータスを確認します。
+1. Podのステータスを確認します。
   ```
   kubectl get pods
   kubectl get pods -o wide
   ```
-* Podの詳細を表示します。
+1. Podの詳細を表示します。
   ```
   kubectl describe pods my-httpd-pod
   ```
-* Podのコンテナに接続します。
+1. Podのコンテナに接続します。
   ```
   kubectl exec -it my-httpd-pod -- /bin/bash
   ```
-* 現在のindex.htmlの内容を表示した後、exit します。
+1. 現在のindex.htmlの内容を表示した後、exit します。
   ```
   ls
   cd htdocs
   more index.html
   exit
-* Podを削除します。
+1. Podを削除します。
   ```
   kubectl delete -f pod-httpd.yaml
   ``` 
-* Podの削除を確認します。
+1. Podの削除を確認します。
   ```
   kubectl get pods
   ``` 
@@ -82,54 +82,54 @@
 
 ## ConfigMapの操作
 
-* alias を使って、キータイプ量を減らすようにします。
+1. alias を使って、キータイプ量を減らすようにします。
   - キータイプの効率を考慮し、以降は k で統一します。
 
   ```
   alias k=kubectl
   ```
 
-* ConfigMapのマニフェストを確認します。  
+1. ConfigMapのマニフェストを確認します。  
   ```
   cat configmap.yaml
   ```
 
-* ConfigMapを作成します。
+1. ConfigMapを作成します。
   ```
   k create -f configmap.yaml
   ```
 
-* ConfigMapをステータスを確認します。
+1. ConfigMapをステータスを確認します。
   ```
   k get configmaps
   ```
 
-* ConfigMapの詳細を表示します。
+1. ConfigMapの詳細を表示します。
   ```
   k describe configmap my-configmap
   ```
 
-* ConfigMapを使用するPodのマニフェストを確認します。  
+1. ConfigMapを使用するPodのマニフェストを確認します。  
   ```
   cat pod-configmap.yaml
   ```
 
-* ConfigMapを使用するPodを作成します。
+1. ConfigMapを使用するPodを作成します。
   ```
   k create -f  pod-configmap.yaml
   ```
 
-* ConfigMapを使用するPodのステータスを確認します。
+1. ConfigMapを使用するPodのステータスを確認します。
   ```
   k get pods
   ```
 
-* ConfigMapを使用するPodのログを表示します。
+1. ConfigMapを使用するPodのログを表示します。
   ```
   k logs  my-pod-configmap
   ```
 
-* ConfigMapを使用するPodを削除します。
+1. ConfigMapを使用するPodを削除します。
   ```
   k delete -f pod-configmap.yaml
   ```
@@ -138,47 +138,47 @@
 
 ## Secretの操作
 
-* Secretのマニフェストを確認します。  
+1. Secretのマニフェストを確認します。  
   ```
   cat secret.yaml
   ```
 
-* Secretを作成します。
+1. Secretを作成します。
   ```
   k create -f secret.yaml
   ```
 
-* Secretをステータスを確認します。
+1. Secretをステータスを確認します。
   ```
   k get secrets
   ```
 
-* Secretの詳細を表示します。
+1. Secretの詳細を表示します。
   ```
   k describe secret my-secret
   ```
 
-* Secretを使用するPodのマニフェストを確認します。  
+1. Secretを使用するPodのマニフェストを確認します。  
   ```
   cat pod-secret.yaml
   ```
 
-* Secretを使用するPodを作成します。
+1. Secretを使用するPodを作成します。
   ```
   k create -f  pod-secret.yaml
   ```
 
-* Secretを使用するPodのステータスを確認します。
+1. Secretを使用するPodのステータスを確認します。
   ```
   k get pods
   ```
 
-* Secretを使用するPodのログを表示します。
+1. Secretを使用するPodのログを表示します。
   ```
   k logs  my-pod-secret
   ```
 
-* Secretを使用するPodを削除します。
+1. Secretを使用するPodを削除します。
   ```
   k delete -f pod-secret.yaml
   ```
@@ -186,39 +186,39 @@
 
 ## Namespaceの操作
 
-* Namespaceのマニフェストを確認します。  
+1. Namespaceのマニフェストを確認します。  
   ```
   cat namespace.yaml
   ```
 
-* Namespaceを作成します。
+1. Namespaceを作成します。
   ```
   k create -f namespace.yaml
   ```
 
-* Namespaceをステータスを確認します。
+1. Namespaceをステータスを確認します。
   ```
   k get namespaces
   ```
-* Namespaceを指定しているPodのマニフェストを確認します。
+1. Namespaceを指定しているPodのマニフェストを確認します。
   ```
   cat pod-nginx.yaml
   ```
 
-* Namespaceを指定しているPodを作成します。
+1. Namespaceを指定しているPodを作成します。
   ```
   k create -f pod-nginx.yaml
   ```
-* Namespaceを**指定せず** Podのステータスを確認します。
+1. Namespaceを**指定せず** Podのステータスを確認します。
   ```  
   k get pods
   ```
-* Namespaceを指定して Podのステータスを確認します。
+1. Namespaceを指定して Podのステータスを確認します。
   ```
   k get pods -n dev
   ```
 
-* Namespaceを指定しているPodを削除します。
+1. Namespaceを指定しているPodを削除します。
   ```
   k delete -f pod-nginx.yaml 
   ```
@@ -227,67 +227,67 @@
 
 ## Deploymentの操作
 
-* Deploymentのマニフェストを確認します。  
+1. Deploymentのマニフェストを確認します。  
   ```
   cat deployment.yaml
   ```
 
-* Deploymentを作成します。 
+1. Deploymentを作成します。 
   ```
   k create -f deployment.yaml
   ```
 
-* Deploymentのステータスを確認します。
+1. Deploymentのステータスを確認します。
   ```
   k get deployments
   ```
 
-* Podのステータスを確認します。
+1. Podのステータスを確認します。
   ```
   k get pods
   ```
 
-* Deploymentのレプリカ数を3に変更します。
+1. Deploymentのレプリカ数を3に変更します。
   ```
   k scale deployment my-deployment --replicas=3
   ```
 
-* Deploymentのステータスを確認します。
+1. Deploymentのステータスを確認します。
   ```
   k get deployments
   ```
 
-* Podのステータスを確認します。
+1. Podのステータスを確認します。
   ```
   k get pods
   ```
 
-* Deploymentのレプリカ数を2に変更します。 
+1. Deploymentのレプリカ数を2に変更します。 
   ```
   k scale deployment my-deployment --replicas=2
   ```
 
-* Deploymentのステータスを確認します。
+1. Deploymentのステータスを確認します。
   ```
   k get deployments
   ```
 
-* Podのステータスを確認します。
+1. Podのステータスを確認します。
   ```
   k get pods
   ```
 
-* Deploymentを削除します。
+1. Deploymentを削除します。
   ```
   k delete -f deployment.yaml
   ```
 
-* Deploymentのステータスを確認します。
+1. Deploymentのステータスを確認します。
   ```
   k get deployments
   ```
 
-* Podのステータスを確認します。
+1. Podのステータスを確認します。
   ```
   k get pods
   ```  
@@ -296,65 +296,65 @@
 
 ## Serviceの操作
 
-* Deploymentを作成します。
+1. Deploymentを作成します。
   ```
   k create -f deployment.yaml
   ```
 
-* Podのステータスを確認します。
+1. Podのステータスを確認します。
   ```
   k get pods
   ```
 
-* Serviceのマニフェストを確認します。  
+1. Serviceのマニフェストを確認します。  
   ```
   cat service.yaml
   ```
 
-* Serviceを作成します。
+1. Serviceを作成します。
   ```
   k create -f service.yaml
   ```
 
-* Serviceのステータスを確認します。
+1. Serviceのステータスを確認します。
   ```
   k get services
   k get services -o wide
   ```
 
-* Public IPを取得してメモします。
+1. Public IPを取得してメモします。
   ```
   curl http://169.254.169.254/latest/meta-data/public-ipv4
   ```
-* curl コマンドを使用してServiceにアクセスします。
+1. curl コマンドを使用してServiceにアクセスします。
   ```
   curl (Public IP):30000
   ```
 
-* 次のようなHTMLが出力されることを確認します。
+1. 次のようなHTMLが出力されることを確認します。
   ```
   <html><body><h1>It works!</h1></body></html>
   ```
 
-* Serviceを削除します。
+1. Serviceを削除します。
   ```
   k delete -f service.yaml
   ```
 
-* Deploymentを削除します。
+1. Deploymentを削除します。
   ```
-  k delete -f deployment.yamlexit
+  k delete -f deployment.yaml
   ```
 
 ---
 
-## ワークの修了
+## ワークの終了
 
-* Minikube を停止します。
+1. Minikube を停止します。
   ```
   minikube stop
   ```
-* 環境への接続を終了します。
+1. 環境への接続を終了します。
   ```
   exit
   ```
