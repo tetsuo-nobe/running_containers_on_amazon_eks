@@ -1,7 +1,7 @@
 version: 0.2
 env:
   variables:
-    EKS_CLUSTER_NAME: "my-cluster"
+    EKS_CLUSTER_NAME: "lab2-cluster"
     KUBECTL_ROLE_ARN: "arn:aws:iam::000000000000:role/my-Role"
 phases:
   install:
