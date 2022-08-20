@@ -1,8 +1,10 @@
-# Helmのデモ
+# Helm のデモ
 
-* EKSクラスターに接続できる環境を用意
+* EKS クラスターに接続できる環境を用意
 
-* Helmのインストール 
+* Helm をインストールする適切なディレクトリに移動。(例： `cd  ~` )
+
+* Helm のインストール 
   - 次の例では Linux にインストールしてバージョンを確認
   ```
   curl -sSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
@@ -14,18 +16,18 @@
   cd running_containers_on_amazon_eks/mod4
 
   ```
-* Chart.yamlの確認
+* Chart.yaml の確認
   - このフォルダにあるChart.yamlを参照
-* Deploymentの定義ファイルの確認
+* Deployment の定義ファイルの確認
   - このフォルダにあるtemplates/deployment/hello-deployment.yamlを参照
-* values.yamlの確認
+* values.yaml の確認
   - このフォルダにあるvalues.yamlを参照
   - レプリカ 2、コンテナイメージのバージョン 1を指定している。
-* `hello-app`アプリケーションとしてデプロイする前にdry-run実行
+* `hello-app` アプリケーションとしてデプロイする前にdry-run実行
   ```
   helm install --debug --dry-run hello-app helmdemo/
   ``` 
-* `hello-app`アプリケーションとしてデプロイ
+* `hello-app` アプリケーションとしてデプロイ
   ```
   helm install hello-app helmdemo/
   ``` 
@@ -37,9 +39,10 @@
   ```
   kubectl get svc,po,deploy
   ```
-* アプリケーションのバージョン1にアクセスできることを確認
-* values.yamlの内容を変更してバージョン2のコンテナイメージを指定する
-* アプリケーションをバージョン2にアップグレードする
+* service/my-service の EXTERNAL-IP に http:// をつけ、ブラウザでアクセス。
+  - アプリケーションのバージョン1にアクセスできることを確認
+* helmdemo/values.yaml の内容を変更してバージョン2 のコンテナイメージを指定する
+* アプリケーションをバージョン2 にアップグレードする
   ```
   helm upgrade hello-app helmdemo/
   ```
@@ -51,16 +54,17 @@
   ```
   kubectl get svc,po,deploy
   ```
-* アプリケーションのバージョン2にアクセスできることを確認
+* service/my-service の EXTERNAL-IP に http:// をつけ、ブラウザでアクセス。
+  - アプリケーションのバージョン2 にアクセスできることを確認
 * アプリケーションのデプロイ履歴を表示
   ```
   helm history hello-app
   ```
-* アプリケーションをバージョン1へロールバック
+* アプリケーションをバージョン1 へロールバック
   ```
   helm rollback hello-app 1
   ```
-* アプリケーションがバージョン1に戻っていることを確認
+* アプリケーションがバージョン1 に戻っていることを確認
 * アプリケーションをアンデプロイ
   ```
   helm uninstall hello-app
