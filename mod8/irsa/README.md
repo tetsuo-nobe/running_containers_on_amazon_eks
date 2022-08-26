@@ -4,7 +4,7 @@
   - 対象のEKS クラスター名は auth-cluster 
   - アクセス対象のバケット名は、tnobe-eks-irsa-demo 
 
-## EKSクラスタにOIDCプロバイダーを関連付ける
+## EKSクラスタのOIDCプロバイダーをIAMに関連付ける
   * 下記を実行
     ```
     eksctl utils associate-iam-oidc-provider --cluster auth-cluster  --approve
