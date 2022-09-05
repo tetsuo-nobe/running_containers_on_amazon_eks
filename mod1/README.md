@@ -18,7 +18,7 @@
    sudo yum install -y conntrack
    ```
 
-## Minnikube の起動
+## Minikube の起動
 
 1. Minikube を起動してステータスを確認します。 
    ```
