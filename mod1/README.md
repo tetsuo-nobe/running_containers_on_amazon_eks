@@ -32,6 +32,11 @@
    sudo ln -s $(which minikube) /usr/local/bin/kubectl
    ```
 
+1. kubectl を使用できることを確認します。
+   ```
+   kubectl version --short --client
+   ```
+   
 ## ワーク用リポジトリの取得
 
 1. ワーク用リポジトリをクローンして移動します。
