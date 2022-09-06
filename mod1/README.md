@@ -248,6 +248,11 @@
    k get deployments
    ```
 
+1. ReplicaSetのステータスを確認します。
+   ```
+   k get replicasets
+   ```
+
 1. Podのステータスを確認します。
    ```
    k get pods
@@ -263,6 +268,11 @@
    k get deployments
    ```
 
+1. ReplicaSetのステータスを確認します。
+   ```
+   k get replicasets
+   ```
+
 1. Podのステータスを確認します。
    ```
    k get pods
@@ -276,6 +286,11 @@
 1. Deploymentのステータスを確認します。
    ```
    k get deployments
+   ```
+
+1. ReplicaSetのステータスを確認します。
+   ```
+   k get replicasets
    ```
 
 1. Podのステータスを確認します。
@@ -359,6 +374,67 @@
 1. 次のコマンドを実行して確認します。
    ```
    k api-resources
+   ```
+
+---
+
+## (時間に余裕があれば実施して下さい）Deploymentの更新の操作
+- このタスクはとばして、[ワークの終了](#ワークの終了) 操作を実施しても OK です！
+
+
+1. Deploymentのマニフェスト (image が nginx:1.22.0) を確認します。  
+   ```
+   cat deployment-nginx1.22.yaml
+   ```
+
+1. Deploymentのマニフェスト (image が nginx:1.23.0) を確認します。  
+   ```
+   cat deployment-nginx1.23.yaml
+   ```
+
+1. Deployment (image が nginx:1.22.0) を作成します。 
+   ```
+   k create -f deployment-nginx1.22.yaml
+   ```
+
+1. Deploymentのステータスを確認します。
+   ```
+   k get deployments
+   ```
+
+1. Podのステータスを確認します。
+   ```
+   k get pods
+   ```
+
+1. Deployment の image を nginx:1.23.0 に更新します。 
+   ```
+   k apply -f deployment-nginx1.23.yaml
+   ```
+
+1. Podのステータスを確認します。
+   ```
+   k get pods
+   ```
+
+1. Deployment 変更履歴を表示します。 
+   ```
+   k rollout history deployment nginx-deployment
+   ```
+
+1. Deployment の image を nginx:1.22.0 にロールバックします。 
+   ```
+   k rollout undo deployment nginx-deployment  --to-revision 1
+   ```
+
+1. Podのステータスを確認します。
+   ```
+   k get pods
+   ```
+
+1. Deployment 変更履歴を表示します。 
+   ```
+   k rollout history deployment nginx-deployment
    ```
 
 ---
