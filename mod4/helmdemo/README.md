@@ -17,9 +17,9 @@
 
   ```
 * Chart.yaml の確認
-  - このフォルダにあるChart.yamlを参照
+  - helmdemo フォルダ(このフォルダ)にある Chart.yamlを参照
 * Deployment の定義ファイルの確認
-  - このフォルダにあるtemplates/deployment/hello-deployment.yamlを参照
+  - helmdemo フォルダ(このフォルダ)にある templates/deployment/hello-deployment.yamlを参照
 * values.yaml の確認
   - このフォルダにあるvalues.yamlを参照
   - レプリカ 2、コンテナイメージのバージョン 1を指定している。
