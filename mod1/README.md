@@ -404,7 +404,7 @@
 
 1. Podのステータスを確認します。
    ```
-   k get pods -o wide
+   k get pods
    ```
 
 1. Deployment の image を nginx:1.23.0 に更新します。 
