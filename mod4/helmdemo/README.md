@@ -43,6 +43,7 @@
   - アプリケーションのバージョン1にアクセスできることを確認
   - (表示されるまで、しばらく時間がかかる場合があります。)
 * helmdemo/values.yaml の内容を変更してバージョン2 のコンテナイメージを指定する
+  - vim で helmdemo/values.yaml を開いて編集
 * アプリケーションをバージョン2 にアップグレードする
   ```
   helm upgrade hello-app helmdemo/
