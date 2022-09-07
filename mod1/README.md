@@ -394,17 +394,17 @@
 
 1. Deployment (image が nginx:1.22.0) を作成します。 
    ```
-   k create -f deployment-nginx1.22.yaml
+   k apply -f deployment-nginx1.22.yaml
    ```
 
 1. Deploymentのステータスを確認します。
    ```
-   k get deployments
+   k get deployments -o wide
    ```
 
 1. Podのステータスを確認します。
    ```
-   k get pods
+   k get pods -o wide
    ```
 
 1. Deployment の image を nginx:1.23.0 に更新します。 
@@ -432,9 +432,14 @@
    k get pods
    ```
 
-1. Deployment 変更履歴を表示します。 
+1. Deploymentの変更履歴を表示します。 
    ```
    k rollout history deployment nginx-deployment
+   ```
+
+1. Deploymentを削除します。 
+   ```
+   k delete -f deployment-nginx1.23.yaml
    ```
 
 ---

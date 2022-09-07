@@ -4,8 +4,14 @@ metadata:
   name: nginx-deployment
   labels:
     app: nginx-deployment
+annotations: kubernetes.io/change-cause=image updated to 1.23.0
 spec:
-  replicas: 2
+  replicas: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailavle: 0
+      maxSurge: 1
   selector:
     matchLabels:
       app: nginx
