@@ -4,7 +4,8 @@ metadata:
   name: nginx-deployment
   labels:
     app: nginx-deployment
-  annotations: kubernetes.io/change-cause=image updated to 1.23.0
+  annotations: 
+    kubernetes.io/change-cause: "image updated to 1.23.0"
 spec:
   replicas: 5
   strategy:
