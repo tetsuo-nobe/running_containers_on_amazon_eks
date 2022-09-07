@@ -97,7 +97,7 @@ eksctl create cluster \
 --name sample4-cluster \
 --vpc-public-subnets subnet-1111111,subnet-2222222  \
 --vpc-private-subnets subnet-3333333,subnet-4444444 \
---nodegroup-name sample3-nodes \
+--nodegroup-name sample4-nodes \
 --node-private-networking \
 --node-type t3.small \
 --nodes 3 \
