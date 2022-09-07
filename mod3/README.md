@@ -86,13 +86,39 @@ eksctl create cluster \
 
 ### eksctlによるクラスター作成のサンプル 4
 
+* VPCやサブネットは事前に作成しておく
+* サブネットIDを指定する
+* マネージドノードグループも作成
+  - マネージドノードグループはPrivateサブネットに作成 
+  - AMI ID を指定 
+
+```
+eksctl create cluster \
+--name sample4-cluster \
+--vpc-public-subnets subnet-1111111,subnet-2222222  \
+--vpc-private-subnets subnet-3333333,subnet-4444444 \
+--nodegroup-name sample3-nodes \
+--node-private-networking \
+--node-type t3.small \
+--nodes 3 \
+--nodes-min 1 \
+--nodes-max 4 \
+--node-ami ami-0a1b2c3d4e5f6g7h8 \
+--managed \
+--version 1.21 \
+--region ap-northeast-1
+```
+---
+
+### eksctlによるクラスター作成のサンプル 5
+
 * Fargateプロファイルを使用するクラスターの作成
 * この例では、FargateプロファイルのNamespaceとして次のものが適用される
   - `kube-system` と `default` 
 
 ```
 eksctl create cluster \
---name sample4-cluster \
+--name sample5-cluster \
 --region ap-northeast-1 \
 --fargate
 ```
@@ -113,7 +139,7 @@ eksctl create fargateprofile \
 
 ---
 
-### eksctlによるクラスター作成のサンプル 5
+### eksctlによるクラスター作成のサンプル 6
 
 * 構成ファイルを使用したクラスター作成
   - 構成ファイルの例
