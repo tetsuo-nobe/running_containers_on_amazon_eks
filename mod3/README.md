@@ -90,7 +90,7 @@ eksctl create cluster \
 * サブネットIDを指定する
 * マネージドノードグループも作成
   - マネージドノードグループはPrivateサブネットに作成 
-  - AMI ID を指定 
+  - AMI のタイプを指定 
 
 ```
 eksctl create cluster \
@@ -103,7 +103,7 @@ eksctl create cluster \
 --nodes 3 \
 --nodes-min 1 \
 --nodes-max 4 \
---node-ami ami-0a1b2c3d4e5f6g7h8 \
+--node-ami-family=Bottlerocket \
 --managed \
 --version 1.21 \
 --region ap-northeast-1
