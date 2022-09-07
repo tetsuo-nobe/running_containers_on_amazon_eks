@@ -127,6 +127,7 @@ eksctl create cluster \
 ### eksctlによるFargateプロファイルの作成のサンプル 
 
 * 既存のクラスター(例ではmy-cluster)にFargateプロファイルを追加作成する
+  - EKS クラスターの VPC に Private Subnet が必要
 * この例では、FargateプロファイルのNamespaceに `prod` 、ラベルに `blue` を指定。
 
 ```
