@@ -10,8 +10,7 @@
   ```
 * kubectl のバージョン確認 (1.14 以降であることを確認）
   ```
-  git clone https://github.com/tetsuo-nobe/running_containers_on_amazon_eks
-  cd running_containers_on_amazon_eks/mod4
+  kubectl version --short --client
 
   ```
 * base フォルダの my-deployment.yaml の内容を確認
