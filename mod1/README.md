@@ -55,7 +55,7 @@
    ```
 1. Podを作成します。
    ```
-   kubectl create -f pod-httpd.yaml
+   kubectl apply -f pod-httpd.yaml
    ```
 1. Podのステータスを確認します。
    ```
@@ -102,7 +102,7 @@
 
 1. ConfigMapを作成します。
    ```
-   k create -f configmap.yaml
+   k apply -f configmap.yaml
    ```
 
 1. ConfigMapをステータスを確認します。
@@ -122,7 +122,7 @@
 
 1. ConfigMapを使用するPodを作成します。
    ```
-   k create -f  pod-configmap.yaml
+   k apply -f  pod-configmap.yaml
    ```
 
 1. ConfigMapを使用するPodのステータスを確認します。
@@ -151,7 +151,7 @@
 
 1. Secretを作成します。
    ```
-   k create -f secret.yaml
+   k apply -f secret.yaml
    ```
 
 1. Secretをステータスを確認します。
@@ -171,7 +171,7 @@
 
 1. Secretを使用するPodを作成します。
    ```
-   k create -f  pod-secret.yaml
+   k apply -f  pod-secret.yaml
    ```
 
 1. Secretを使用するPodのステータスを確認します。
@@ -199,7 +199,7 @@
 
 1. Namespaceを作成します。
    ```
-   k create -f namespace.yaml
+   k apply -f namespace.yaml
    ```
 
 1. Namespaceをステータスを確認します。
@@ -213,7 +213,7 @@
 
 1. Namespaceを指定しているPodを作成します。
    ```
-   k create -f pod-nginx.yaml
+   k apply -f pod-nginx.yaml
    ```
 1. Namespaceを**指定せず** Podのステータスを確認します。
    ```  
@@ -240,7 +240,7 @@
 
 1. Deploymentを作成します。 
    ```
-   k create -f deployment.yaml
+   k apply -f deployment.yaml
    ```
 
 1. Deploymentのステータスを確認します。
@@ -319,7 +319,7 @@
 
 1. Deploymentを作成します。
    ```
-   k create -f deployment.yaml
+   k apply -f deployment.yaml
    ```
 
 1. Podのステータスを確認します。
@@ -334,7 +334,7 @@
 
 1. Serviceを作成します。
    ```
-   k create -f service.yaml
+   k apply -f service.yaml
    ```
 
 1. Serviceのステータスを確認します。
