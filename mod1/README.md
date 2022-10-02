@@ -259,6 +259,7 @@
    ```
 
 1. Deploymentのレプリカ数を3に変更します。
+   - (ここでは kubectl scale コマンドを使用していますが、vim を使用できる人はマニフェストで replicas の値を変更して kubectl apply を使用しても OKです。)
    ```
    k scale deployment my-deployment --replicas=3
    ```
@@ -279,6 +280,7 @@
    ```
 
 1. Deploymentのレプリカ数を2に変更します。 
+   - (ここでは kubectl scale コマンドを使用していますが、vim を使用できる人はマニフェストで replicas の値を変更して kubectl apply を使用しても OKです。)
    ```
    k scale deployment my-deployment --replicas=2
    ```
