@@ -2,11 +2,14 @@ version: 0.2
 env:
   variables:
     EKS_CLUSTER_NAME: "lab2-cluster"
-    KUBECTL_ROLE_ARN: "arn:aws:iam::000000000000:role/my-Role"
+    KUBECTL_ROLE_ARN: "arn:aws:iam::146230907561:role/my-ThisAccount-Admin-Role"
 phases:
   install:
     commands:
-      - yum install -y awscli git python3 jq gettext bash-completion moreutils
+      - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+      - unzip awscliv2.zip
+      - ls -l /root/.pyenv/shims/aws
+      - ./aws/install --bin-dir /root/.pyenv/shims --install-dir /usr/local/aws-cli --update
       - curl -sSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
       - helm version --short
   pre_build:
@@ -22,7 +25,7 @@ phases:
   build:
     commands:
       - echo Entered the build phase...
-      - helm upgrade -i hello-app ./
+      - helm upgrade -i hello-app ./chart
   post_build:
     commands:
       - echo Entered the post_build phase...
