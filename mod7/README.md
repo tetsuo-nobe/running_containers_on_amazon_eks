@@ -240,7 +240,10 @@
 ---
 
 ## ワークの終了
-
+1. Cloud 9 のターミナルで次のコマンドを実行して Deployment を作成します。
+   ```
+   kubectl delete -f deployment-python-web-ec2.yaml
+   ```
 1. Web ブラウザで Cloud 9 IDE のタブを閉じます。
 
 1. AWS マネジメントコンソールで、右上に表示されている IAM ユーザー名をクリックして、メニューからサインアウトをクリックします。
