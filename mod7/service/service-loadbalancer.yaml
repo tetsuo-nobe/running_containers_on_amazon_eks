@@ -1,9 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service-clusterip
+  name: my-service-loadbalancer
+  namespace: student99
 spec:
-  type: ClusterIP # default
+  type: LoadBalancer 
   ports:
   - port: 80
     protocol: TCP
