@@ -1,9 +1,15 @@
 # Amazon EKS で Service や Ingress を作成してみよう
 * マニフェストの内容や、実行結果を確認しながら進めてみましょう。
+* 1 つの EKS クラスタを複数の受講者で共用します。割当てられた IAM ユーザー 名や EKS クラスタの namespaceを正しく使用しましょう。
+
+---
 
 ## 環境への接続について
 
-* 講師よりガイドいたします。
+1. 講師が指定する AWS アカウント、IAM ユーザー、パスワードを使用して AWS マネジメントコンソールにサインインします。なお、IAMユーザー名は、EKS クラスタでハンズオン用に指定する namespaceの名前と同じになります。
+1. Cloud 9 のページを表示します。IAM ユーザー毎に 1つの Cloud 9 IDE が用意されているので、[Open IDE] をクリックします。
+
+---
 
 ## Cloud 9 の一時認証情報の無効化
 1. Cloud 9 画面の右上にある**歯車アイコン**をクリックします。
@@ -11,6 +17,9 @@
 1. 右側の **Credentials** にある **AWS managed temporary credentials** トグルを OFFにします。
   ![codepipeline-demo-img](https://eks.nobelabo.net/images/mod7-cloud9.png)
 1. Preferences のタブを閉じます。
+
+---
+
 ## 現在の IAM ロールの確認
 
 1. Cloud 9 のターミナルで次のコマンドを実行します。 
@@ -19,6 +28,7 @@
    ```
 1. 出力された Arn に、**my-EC2-EKS-DesclibeCluster-Role** という文字が含まれていることを確認します。
 
+---
    
 ## kubectl のインストール
 
@@ -34,6 +44,7 @@
    ```
    Client Version: v1.22.6-eks-7d68063
    ```
+---
 
 ## ハンズオン用の Amazon EKS クラスタへの接続設定
 
@@ -55,6 +66,8 @@
    NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   
    service/kubernetes   ClusterIP   172.20.0.1   <none>        443/TCP 
    ```
+
+---
 
 ## ワーク用リポジトリの取得
 
