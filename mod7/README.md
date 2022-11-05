@@ -10,7 +10,7 @@
 1. Preferences タブ の左側で **AWS Settings** をクリックします。
 1. 右側の **Credentials** にある **AWS managed temporary credentials** トグルを OFFにします。
   ![codepipeline-demo-img](https://eks.nobelabo.net/images/mod7-cloud9.png)
-1. Preference のタブを閉じます。
+1. Preferences のタブを閉じます。
 ## 現在の IAM ロールの確認
 
 1. Cloud 9 のターミナルで次のコマンドを実行します。 
@@ -65,12 +65,29 @@
    ```
 
 ---
+## ハンズオン用のWebアプリのデプロイ
+
+1. Cloud9 画面左側から 下記の Service のマニフェストのファイルをダブルクリックして開きます。
+   ```
+   running_containers_on_amazon_eks/mod7/deployment-python-web-ec2.yaml
+   ```
+1. マニフェストの中で **namespace の値を自分に割当てられた値に変更**してファイルを保存します。
+
+1. Cloud 9 のターミナルで次のコマンドを実行して Deployment を作成します。
+   ```
+   kubectl apply -f deployment-python-web-ec2.yaml
+   ```
+1. Deployment を表示します。-n の後には自分の Namespace を指定します。2つの Pod が起動したことを確認します。
+   ```
+   kubectl get deploy -n student99
+   ```
+---
 
 ## ClusterIP タイプの Service の作成
 
 1. Cloud9 画面左側から 下記の Service のマニフェストのファイルをダブルクリックして開きます。
    ```
-   running_containers_on_amazon_eks/mod7/service/service-cluster-ip.yaml
+   running_containers_on_amazon_eks/mod7/service/service-clusterip.yaml
    ```
 1. マニフェストの中で **namespace の値を自分に割当てられた値に変更**してファイルを保存します。
 
@@ -84,7 +101,7 @@
    ```
 1. Serviceにアクセスするために一時的な Pod を起動してそのコンテナに接続します。-n の後には自分の Namespace を指定します。
    ```
-   k run bastion --rm -it  -n student99 --image nginx  -- /bin/bash
+   kubectl run bastion --rm -it  -n student99 --image nginx  -- /bin/bash
    ```
 1. Pod から 次の 2つのcurl コマンドを使用して Service にアクセスしてみます。
    ```
@@ -110,7 +127,7 @@
    ```
 1. Service を削除します。
    ```
-   kubectl delete -f service/service-cluster-ip.yaml 
+   kubectl delete -f service/service-clusterip.yaml 
    ``` 
 1. Service の削除を確認します。-n の後には自分の Namespace を指定します。
    ```
@@ -131,17 +148,21 @@
    ```
    kubectl apply -f service/service-nodeport.yaml 
    ```
-1. Service を表示します。-n の後には自分の Namespace を指定します。**出力から Node Port の値をメモしておきます。**
+1. Service を表示します。-n の後には自分の Namespace を指定します。**出力から PORT(S)の内容を確認します。80: の右横にある数字が Node Port の値になるので、メモしておきます。**
    ```
    kubectl get service -n student99
    ```
-1. AWS マネジメントコンソールで EC2 のページを表示して、次の名前のインスタンスの**パブリック IPv4 アドレス**の値をメモしておきます。
+1. AWS マネジメントコンソールで EC2 のページを表示して、次の名前のインスタンスの**パブリック IPv4 アドレス**の値をメモしておきます。同じ名前が複数ある場合は、どちらでもかまいません。
    ```
    tgb-cluster-tgb-nodes-Node
    ```
 1. Webブラウザで新しいタブを開き、次のように URL を指定して **Top Page** という文字を含んだ Web ページが表示されることを確認します。
    ```
    http://<パブリックIPv4アドレス>:<NodePort>
+   ```
+1. (ご使用のネットワークによりアクセスが制限される場合は、Cloud 9 のターミナルから次のように curl コマンドを実行してアクセスを確認して下さい。)
+   ```
+   curl <パブリックIPv4アドレス>:<NodePort>
    ```
 1. Service を削除します。
    ```
@@ -150,7 +171,7 @@
 1. Service の削除を確認します。-n の後には自分の Namespace を指定します。
    ```
    kubectl get service -n student99
-
+   ```
 ---
 
 ## LoadBalancer タイプの Service の作成
@@ -165,16 +186,16 @@
    ```
    kubectl apply -f service/service-loadbalancer.yaml 
    ```
-1. Service を表示します。-n の後には自分の Namespace を指定します。**出力から XXXX の値をメモしておきます。** 
+1. Service を表示します。-n の後には自分の Namespace を指定します。**出力から EXTERNAL-IP の値をメモしておきます。** 
    ```
    kubectl get service -n student99
    ```
 1. Webブラウザで新しいタブを開き、次のように URL を指定して **Top Page** という文字を含んだ Web ページが表示されることを確認します。**アクセス可能になるまで少し待つ必要があります。** 表示されたら、何回か繰り返してアクセスして、表示される AZ の値が切替わることを確認します。
    ```
-   http://XXXX
+   http://<EXTERNAL-IPの値>
    ```
 1. AWS マネジメントコンソールで EC2 のページを開き、左側ナビゲーションメニューで **ロードバランシング** - **ロードバランサー** をクリックします。
-1. DNS 名がメモしたものと一致するロードバランサーを見つけて、[状態]が Active、[種類]が classic になっていることを確認します。
+1. DNS 名がメモしたものと一致するロードバランサーを見つけて、[種類]が classic になっていることを確認します。
 1. Service を削除します。
    ```
    kubectl delete -f service/service-loadbalancer.yaml 
@@ -182,6 +203,7 @@
 1. Service の削除を確認します。-n の後には自分の Namespace を指定します。
    ```
    kubectl get service -n student99
+   ```
 ---
 
 ## Ingress の作成
@@ -190,25 +212,25 @@
    ```
    running_containers_on_amazon_eks/mod7/ingress/ingress-alb-ip.yaml
    ```
-1. マニフェストの中で **namespace の値を自分に割当てられた値に変更**してファイルを保存します。
+1. マニフェストの中で **2箇所のnamespace の値を自分に割当てられた値に変更**してファイルを保存します。**(2箇所あるので注意しましょう。)**
 
 1. Cloud 9 のターミナルで次のコマンドを実行して Ingress を作成します。
    ```
    kubectl apply -f ingress/ingress-alb-ip.yaml
    ```
-1. Ingress を表示します。-n の後には自分の Namespace を指定します。**出力から XXXX の値をメモしておきます。** 
+1. Ingress を表示します。-n の後には自分の Namespace を指定します。**出力から ADDRESS の値をメモしておきます。** 
    ```
    kubectl get ingress -n student99
    ```
 1. Webブラウザで新しいタブを開き、次のように URL を指定して **Top Page** という文字を含んだ Web ページが表示されることを確認します。**アクセス可能になるまで少し待つ必要があります。** 表示されたら、何回か繰り返してアクセスして、表示される AZ の値が切替わることを確認します。
    ```
-   http://XXXX
+   http://<ADDRESSの値>
    ```
 1. AWS マネジメントコンソールで EC2 のページを開き、左側ナビゲーションメニューで **ロードバランシング** - **ロードバランサー** をクリックします。
 1. DNS 名がメモしたものと一致するロードバランサーを見つけて、[状態]が Active、[種類]が application になっていることを確認します。
 1. Ingressを削除します。
    ```
-   kubectl delete -f service/ingress/ingress-alb-ip.yaml
+   kubectl delete -f ingress/ingress-alb-ip.yaml
    ``` 
 1. Ingressの削除を確認します。-n の後には自分の Namespace を指定します。
    ```
