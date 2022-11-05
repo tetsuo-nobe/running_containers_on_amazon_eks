@@ -234,7 +234,7 @@
    ``` 
 1. Ingressの削除を確認します。-n の後には自分の Namespace を指定します。
    ```
-   kubectl get Ingress -n student99
+   kubectl get ingress -n student99
    ```
 
 ---
