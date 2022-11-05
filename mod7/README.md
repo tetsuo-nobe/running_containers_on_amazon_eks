@@ -6,12 +6,11 @@
 * 講師よりガイドいたします。
 
 ## Cloud 9 の一時認証情報の無効化
-1. Cloud 9 画面の右上にある歯車アイコンをクリックします。
-
-1. Preference の左側で AWS Settings をクリックし、右側の トグルを OFFにします。
-   
+1. Cloud 9 画面の右上にある**歯車アイコン**をクリックします。
+1. Preferences タブ の左側で **AWS Settings** をクリックします。
+1. 右側の **Credentials** にある **AWS managed temporary credentials** トグルを OFFにします。
+  ![codepipeline-demo-img](https://eks.nobelabo.net/images/mod7-cloud9.png)
 1. Preference のタブを閉じます。
-
 ## 現在の IAM ロールの確認
 
 1. Cloud 9 のターミナルで次のコマンドを実行します。 
@@ -174,6 +173,8 @@
    ```
    http://XXXX
    ```
+1. AWS マネジメントコンソールで EC2 のページを開き、左側ナビゲーションメニューで **ロードバランシング** - **ロードバランサー** をクリックします。
+1. DNS 名がメモしたものと一致するロードバランサーを見つけて、[状態]が Active、[種類]が classic になっていることを確認します。
 1. Service を削除します。
    ```
    kubectl delete -f service/service-loadbalancer.yaml 
@@ -203,6 +204,8 @@
    ```
    http://XXXX
    ```
+1. AWS マネジメントコンソールで EC2 のページを開き、左側ナビゲーションメニューで **ロードバランシング** - **ロードバランサー** をクリックします。
+1. DNS 名がメモしたものと一致するロードバランサーを見つけて、[状態]が Active、[種類]が application になっていることを確認します。
 1. Ingressを削除します。
    ```
    kubectl delete -f service/ingress/ingress-alb-ip.yaml
@@ -210,6 +213,7 @@
 1. Ingressの削除を確認します。-n の後には自分の Namespace を指定します。
    ```
    kubectl get Ingress -n student99
+   ```
 
 ---
 
