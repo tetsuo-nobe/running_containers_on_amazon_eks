@@ -41,7 +41,7 @@
    ```
    aws eks --region ap-northeast-1 update-kubeconfig --name tgb-cluster
    ```
-1. 次の例のようなバージョンが表示されることを確認します。 (arn の内容は異なっていても問題ありません。)
+1. 次のような出力が表示されることを確認します。 (arn の内容は異なっていても問題ありません。)
    ```
    Added new context arn:aws:eks:ap-northeast-1:123412341234:cluster/tgb-cluster to /home/ec2-user/.kube/config
    ```
@@ -86,12 +86,12 @@
    ```
    k run bastion --rm -it  -n student99 --image nginx  -- /bin/bash
    ```
-1. Pod から curl コマンドを使用して Service にアクセスしてみます。
+1. Pod から 次の 2つのcurl コマンドを使用して Service にアクセスしてみます。
    ```
-   curl  10.100.235.63
+   curl <CLUSTER-IPの値>
    curl my-service-clusterip
    ```
-1. 次のような　HTML が表示されることを確認します。
+1. curl コマンドの結果、次のような　HTML が表示されることを確認します。
    ```
    <html>
      <title>python-web-ec2</title>
