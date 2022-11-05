@@ -93,7 +93,7 @@
 
 1. Cloud 9 のターミナルで次のコマンドを実行して Service を作成します。
    ```
-   kubectl apply -f service/service-cluster-ip.yaml
+   kubectl apply -f service/service-clusterip.yaml
    ```
 1. Service を表示します。-n の後には自分の Namespace を指定します。**出力から CLUSTER-IP の値をメモしておきます。**
    ```
