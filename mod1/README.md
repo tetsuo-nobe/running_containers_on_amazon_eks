@@ -58,7 +58,7 @@
    ```
    kubectl apply -f pod-httpd.yaml
    ```
-1. Podのステータスを確認します。
+1. Podのステータスを確認します。( STATUS が Running になるまで繰り返し実行して下さい。)
    ```
    kubectl get pods
    kubectl get pods -o wide
