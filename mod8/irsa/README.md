@@ -42,6 +42,7 @@
 
   eksctl create iamserviceaccount \;q
     --name my-demo-bucket-fullaccess \
+    --role-name "my-demo-bucket-fullaccess-role"  \
     --cluster auth-cluster \
     --attach-policy-arn arn:aws:iam::${AWS_ACCOUNT_ID}:policy/my-demo-bucket-fullaccess-policy \
     --override-existing-serviceaccounts \
@@ -58,7 +59,7 @@
 ## サービスアカウントを設定しない Pod から S3 バケットにアクセスしてみる
 * このフォルダにある pod-aws-cli.yaml を使用して Pod を作成
   ```
-  kubectl create -f pod-aws-cli.yaml
+  kubectl apply -f pod-aws-cli.yaml
   ```
 * シェルに接続
   ```
@@ -77,7 +78,7 @@
 ## サービスアカウントを設定している Pod から S3 バケットにアクセスしてみる
 * このフォルダにある pod-sa-aws-cli.yaml を使用して Pod を作成
   ```
-  kubectl create -f pod-sa-aws-cli.yaml
+  kubectl apply -f pod-sa-aws-cli.yaml
   ```
 * シェルに接続
   ```
