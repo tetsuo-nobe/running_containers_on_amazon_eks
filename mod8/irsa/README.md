@@ -42,7 +42,7 @@
 
   eksctl create iamserviceaccount \;q
     --name my-demo-bucket-fullaccess \
-    --role-name "my-demo-bucket-fullaccess-role"  \
+    --role-name my-demo-bucket-fullaccess-role  \
     --cluster auth-cluster \
     --attach-policy-arn arn:aws:iam::${AWS_ACCOUNT_ID}:policy/my-demo-bucket-fullaccess-policy \
     --override-existing-serviceaccounts \
