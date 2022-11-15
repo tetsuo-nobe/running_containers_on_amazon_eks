@@ -92,7 +92,7 @@
    ```
    kubectl apply -f deployment-python-web-ec2.yaml
    ```
-1. Deployment を表示します。-n の後には自分の Namespace を指定します。2つの Pod が起動したことを確認します。
+1. Deployment を表示します。**-n の後には自分の Namespace を指定します。** 2つの Pod が起動したことを確認します。(READY が 2/2 になるまで繰り返し実行して下さい。)
    ```
    kubectl get deploy -n student99
    ```
@@ -110,11 +110,11 @@
    ```
    kubectl apply -f service/service-clusterip.yaml
    ```
-1. Service を表示します。-n の後には自分の Namespace を指定します。**出力から CLUSTER-IP の値をメモしておきます。**
+1. Service を表示します。**-n の後には自分の Namespace を指定します。出力から CLUSTER-IP の値をメモしておきます。**
    ```
    kubectl get service -n student99
    ```
-1. Serviceにアクセスするために一時的な Pod を起動してそのコンテナに接続します。-n の後には自分の Namespace を指定します。
+1. Serviceにアクセスするために一時的な Pod を起動してそのコンテナに接続します。**-n の後には自分の Namespace を指定します。**
    ```
    kubectl run bastion --rm -it  -n student99 --image nginx  -- /bin/bash
    ```
@@ -144,7 +144,7 @@
    ```
    kubectl delete -f service/service-clusterip.yaml 
    ``` 
-1. Service の削除を確認します。-n の後には自分の Namespace を指定します。
+1. Service の削除を確認します。**-n の後には自分の Namespace を指定します。**
    ```
    kubectl get service -n student99
    ``` 
@@ -163,7 +163,7 @@
    ```
    kubectl apply -f service/service-nodeport.yaml 
    ```
-1. Service を表示します。-n の後には自分の Namespace を指定します。**出力から PORT(S)の内容を確認します。80: の右横にある数字が Node Port の値になるので、メモしておきます。**
+1. Service を表示します。**-n の後には自分の Namespace を指定します。出力から PORT(S)の内容を確認します。80: の右横にある数字が Node Port の値になるので、メモしておきます。**
    ```
    kubectl get service -n student99
    ```
@@ -183,7 +183,7 @@
    ```
    kubectl delete -f service/service-nodeport.yaml 
    ``` 
-1. Service の削除を確認します。-n の後には自分の Namespace を指定します。
+1. Service の削除を確認します。**-n の後には自分の Namespace を指定します。**
    ```
    kubectl get service -n student99
    ```
@@ -201,7 +201,7 @@
    ```
    kubectl apply -f service/service-loadbalancer.yaml 
    ```
-1. Service を表示します。-n の後には自分の Namespace を指定します。**出力から EXTERNAL-IP の値をメモしておきます。** 
+1. Service を表示します。**-n の後には自分の Namespace を指定します。出力から EXTERNAL-IP の値をメモしておきます。** 
    ```
    kubectl get service -n student99
    ```
@@ -215,7 +215,7 @@
    ```
    kubectl delete -f service/service-loadbalancer.yaml 
    ``` 
-1. Service の削除を確認します。-n の後には自分の Namespace を指定します。
+1. Service の削除を確認します。**-n の後には自分の Namespace を指定します。**
    ```
    kubectl get service -n student99
    ```
@@ -233,11 +233,11 @@
    ```
    kubectl apply -f ingress/ingress-alb-ip.yaml
    ```
-1. Ingress を表示します。-n の後には自分の Namespace を指定します。**出力から ADDRESS の値をメモしておきます。** 
+1. Ingress を表示します。**-n の後には自分の Namespace を指定します。出力から ADDRESS の値をメモしておきます。** 
    ```
    kubectl get ingress -n student99
    ```
-1. Pod の IPアドレス を表示します。-n の後には自分の Namespace を指定します。**出力から全ての Pod の IP の値をメモしておきます。** 
+1. Pod の IPアドレス を表示します。**-n の後には自分の Namespace を指定します。出力から全ての Pod の IP の値をメモしておきます。** 
    ```
    kubectl get po -n student99 -o wide
    ```
@@ -256,7 +256,7 @@
    ```
    kubectl delete -f ingress/ingress-alb-ip.yaml
    ``` 
-1. Ingressの削除を確認します。-n の後には自分の Namespace を指定します。
+1. Ingressの削除を確認します。**-n の後には自分の Namespace を指定します。**
    ```
    kubectl get ingress -n student99
    ```
