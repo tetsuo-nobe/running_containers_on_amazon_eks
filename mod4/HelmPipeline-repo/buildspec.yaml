@@ -2,7 +2,7 @@ version: 0.2
 env:
   variables:
     EKS_CLUSTER_NAME: "lab2-cluster"
-    KUBECTL_ROLE_ARN: "arn:aws:iam::146230907561:role/my-ThisAccount-Admin-Role"
+    KUBECTL_ROLE_ARN: "arn:aws:iam::123412341234:role/my-ThisAccount-Admin-Role"
 phases:
   install:
     commands:
