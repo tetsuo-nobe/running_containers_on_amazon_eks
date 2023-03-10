@@ -37,7 +37,7 @@ eksctl create cluster \
 --nodes-min 1 \
 --nodes-max 4 \
 --managed \
---version 1.21 \
+--version 1.25 \
 --region ap-northeast-1
 ```
 
@@ -54,7 +54,7 @@ eksctl create cluster \
 AWS_REGION=ap-northeast-1
 eksctl create cluster \
   --name=sample2-cluster \
-  --version 1.21 \
+  --version 1.25 \
   --nodes=3 --managed \
   --region ${AWS_REGION} --zones ${AWS_REGION}a,${AWS_REGION}c
 ```
@@ -79,7 +79,7 @@ eksctl create cluster \
 --nodes-min 1 \
 --nodes-max 4 \
 --managed \
---version 1.21 \
+--version 1.25 \
 --region ap-northeast-1
 ```
 ---
@@ -105,7 +105,7 @@ eksctl create cluster \
 --nodes-max 4 \
 --node-ami-family=Bottlerocket \
 --managed \
---version 1.21 \
+--version 1.25 \
 --region ap-northeast-1
 ```
 ---
