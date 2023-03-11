@@ -475,7 +475,7 @@
    ```
    kubectl apply -f cronjob.yaml
    ```
-1. CronJobにより実行されたPodのステータスを確認します。( 2～3分の間に Completed になった Podが増えることを確認します。)
+1. CronJobにより実行されたPodのステータスを確認します。( 2～3分の間に数回実行してCompletedになったPodが増えることを確認します。)
    ```
    kubectl get pods
    ```
