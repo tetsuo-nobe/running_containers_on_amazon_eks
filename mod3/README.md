@@ -119,6 +119,7 @@ eksctl create cluster \
 ```
 eksctl create cluster \
 --name sample5-cluster \
+--version 1.25 \
 --region ap-northeast-1 \
 --fargate
 ```
