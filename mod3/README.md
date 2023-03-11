@@ -145,6 +145,8 @@ eksctl create fargateprofile \
 ### eksctlによるクラスター作成のサンプル 6
 
 * 構成ファイルを使用したクラスター作成
+  - 下記のように `--dry-run` オプションを使用して構成ファイルのテンプレートを生成可能
+    - `eksctl create cluster --name temp-cluster  --dry-run`
   - 構成ファイルの例
     - clusterconfig_public.yaml
       - マネージドノードグループをPublicサブネットに配置
