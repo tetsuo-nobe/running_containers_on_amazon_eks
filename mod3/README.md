@@ -113,6 +113,7 @@ eksctl create cluster \
 ### eksctlによるクラスター作成のサンプル 5
 
 * Fargateプロファイルを使用するクラスターの作成
+* VPCやサブネットも作成
 * この例では、FargateプロファイルのNamespaceとして次のものが適用される
   - `kube-system` と `default` 
 
