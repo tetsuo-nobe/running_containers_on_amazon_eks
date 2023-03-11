@@ -463,6 +463,10 @@
    ```
    kubectl logs <コピーした Pod名>
    ```
+1. Jobを削除します。
+   ```
+   kubectl delete -f job.yaml
+   ``` 
 1. CronJobのマニフェストを確認します。
    ```
    cat cronjob.yaml
@@ -479,6 +483,10 @@
    ```
    kubectl logs <コピーした Pod名>
    ```
+1. CronJobを削除します。
+   ```
+   kubectl delete -f cronjob.yaml
+   ``` 
 ---
 
 ## ワークの終了
