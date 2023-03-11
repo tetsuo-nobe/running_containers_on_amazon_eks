@@ -229,7 +229,6 @@
    ```
    k delete -f pod-nginx.yaml 
    ```
-
 ---
 
 ## Deploymentの操作
@@ -445,6 +444,41 @@
    k delete -f deployment-nginx1.23.yaml
    ```
 
+## (時間に余裕があれば実施して下さい）Job と CronJob の操作
+- このタスクはとばして、[ワークの終了](#ワークの終了) 操作を実施しても OK です！
+
+1. Jobのマニフェストを確認します。
+   ```
+   cat job.yaml
+   ```
+1. Jobを作成します。
+   ```
+   kubectl apply -f job.yaml
+   ```
+1. Jobにより実行されたPodのステータスを確認します。( STATUS が Completed になるまで繰り返し実行して下さい。)
+   ```
+   kubectl get pods
+   ```
+1. `kubectl get pods` で表示された Pod の名前をコピーして下記を実行し、Jobの実行結果を確認します。
+   ```
+   kubectl logs <コピーした Pod名>
+   ```
+1. CronJobのマニフェストを確認します。
+   ```
+   cat cronjob.yaml
+   ```
+1. CronJobを作成します。
+   ```
+   kubectl apply -f cronjob.yaml
+   ```
+1. CronJobにより実行されたPodのステータスを確認します。( 2～3分の間に Completed になった Podが増えることを確認します。)
+   ```
+   kubectl get pods
+   ```
+1. `kubectl get pods` で表示された Pod のうち、1つのPodの名前をコピーして下記を実行し、CronJobによるJob実行結果を確認します。
+   ```
+   kubectl logs <コピーした Pod名>
+   ```
 ---
 
 ## ワークの終了
