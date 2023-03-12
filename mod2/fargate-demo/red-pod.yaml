@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: red-pod
-  namespace: prod
+  namespace: fg
   labels:
     app:   webserver
     stack: red
