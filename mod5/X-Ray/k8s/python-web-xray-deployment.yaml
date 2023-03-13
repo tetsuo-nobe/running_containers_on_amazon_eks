@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: xray-deployment
-  namespace: default
+  name: xray-demoapp-deployment
+  namespace: xray
   labels:
-    app: xray-deployment
+    app: xray-demoapp-deployment
 spec:
   replicas: 2
   selector:
@@ -15,6 +15,7 @@ spec:
       labels:
         app: python-web-xray
     spec:
+      serviceAccountName: xray-demoapp-sa
       containers:
       - name:  python-web-xray
         image: tnobe/python-web-xray
@@ -22,10 +23,9 @@ spec:
         - containerPort: 8000
         env:
         - name: AWS_XRAY_DAEMON_ADDRESS
-          value: xray-service.default:2000
+          value: xray-service.xray:2000
         - name: REGION
           value: ap-northeast-1
         - name: QUEUE_NAME
           value: Demo-XRay-Q
-          
         
