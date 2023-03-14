@@ -7,7 +7,7 @@
 HPA は、Kubernetes の標準 API リソースであり、動作するには、メトリクスソース (Kubernetes メトリクスサーバーなど) が Amazon EKS クラスターにインストールされている必要があります。アプリケーションのスケーリングを開始するために、クラスターに Horizontal Pod Autoscaler をデプロイまたはインストールする必要はありません。
 ```
 
-* メトリクスサーバーのインストール必要あり(kube-system ネームスペース）
+* メトリクスサーバーのインストール(kube-system ネームスペース）
   - https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/metrics-server.html
 
 ```
