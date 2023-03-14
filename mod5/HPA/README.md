@@ -50,7 +50,7 @@ kubectl run -i \
 kubectl get hpa php-apache
 ```
 
-* サンプルアプリケーションの削除
+* HPA リソースとサンプルアプリケーションの削除
 ```
 kubectl delete deployment.apps/php-apache service/php-apache horizontalpodautoscaler.autoscaling/php-apache
 ```
