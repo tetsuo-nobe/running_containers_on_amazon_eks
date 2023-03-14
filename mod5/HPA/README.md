@@ -1,14 +1,14 @@
 # HPA (Horizontal Pod Autoscaler) の設定とデモ
 
 * HPA (Horizontal Pod Autoscaler) 設定手順
- - https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/horizontal-pod-autoscaler.html
-   - https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+  - https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/horizontal-pod-autoscaler.html
+  - https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
 ```
 HPA は、Kubernetes の標準 API リソースであり、動作するには、メトリクスソース (Kubernetes メトリクスサーバーなど) が Amazon EKS クラスターにインストールされている必要があります。アプリケーションのスケーリングを開始するために、クラスターに Horizontal Pod Autoscaler をデプロイまたはインストールする必要はありません。
 ```
 
 * メトリクスサーバーのインストール必要あり(kube-system ネームスペース）
- - https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/metrics-server.html
+  - https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/metrics-server.html
 
 ```
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
