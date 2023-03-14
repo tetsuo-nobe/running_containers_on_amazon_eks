@@ -44,6 +44,8 @@ kubectl run -i \
 ```
 
 * 別のターミナルで HPA の状態取得
+  - 負荷をかけると、Pod 数が増加していく
+  - 負荷かけを停止すると、Pod 数は約5分後に1に戻る
 ```
 kubectl get hpa php-apache
 ```
