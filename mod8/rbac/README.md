@@ -43,7 +43,7 @@
 
 ## aws-auth ConfigMapに新規IAMユーザーのマップを追加
    ```
-   eksctl create iamidentitymapping --cluster auth-cluster --arn <作成したIAMユーザーのARN> --group system:masters --username demo-iam-user
+   eksctl create iamidentitymapping --cluster demo-cluster --arn <作成したIAMユーザーのARN> --group system:masters --username demo-iam-user
    ```
 
 ## 再度、IAMユーザーとRBACグループのマップを定義しているConfigMapを確認
