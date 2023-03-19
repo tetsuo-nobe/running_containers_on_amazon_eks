@@ -1,13 +1,13 @@
 # Pod から Amazon S3 バケットにアクセスを可能にする
 
 * 前提
-  - 対象のEKS クラスター名は auth-cluster 
+  - 対象のEKS クラスター名は demo-cluster 
   - アクセス対象のバケット名は、tnobe-eks-irsa-demo 
 
 ## EKSクラスタのOIDCプロバイダーをIAMに関連付ける
   * 下記を実行
     ```
-    eksctl utils associate-iam-oidc-provider --cluster auth-cluster  --approve
+    eksctl utils associate-iam-oidc-provider --cluster demo-cluster  --approve
     ```
 
 ## IAMロールに設定するIAMポリシーの作成
@@ -43,7 +43,7 @@
   eksctl create iamserviceaccount \;q
     --name my-demo-bucket-fullaccess \
     --role-name my-demo-bucket-fullaccess-role  \
-    --cluster auth-cluster \
+    --cluster demo-cluster \
     --attach-policy-arn arn:aws:iam::${AWS_ACCOUNT_ID}:policy/my-demo-bucket-fullaccess-policy \
     --override-existing-serviceaccounts \
     --approve
@@ -101,6 +101,6 @@
   ```
   kubectl delete -f pod-aws-cli.yaml
   kubectl delete -f pod-sa-aws-cli.yaml
-  eksctl delete iamserviceaccount dynamodb-messages-fullaccess --cluster auth-cluster
+  eksctl delete iamserviceaccount dynamodb-messages-fullaccess --cluster demo-cluster
   ```
  * その他、必要に応じて IAM ポリシーなども削除
