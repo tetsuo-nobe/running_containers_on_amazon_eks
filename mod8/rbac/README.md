@@ -1,7 +1,7 @@
 # IAM ユーザーを作成して EKS クラスターで管理できる権限を与える
 
 * 前提
-  - 対象のEKS クラスター名は auth-cluster 
+  - 対象のEKS クラスター名は demo-cluster 
   - rbac-lookup コマンドをインストールしている
 
 ## IAM ユーザーの新規作成
@@ -16,7 +16,7 @@
             "Sid": "VisualEditor0",
             "Effect": "Allow",
             "Action": "eks:DescribeCluster",
-            "Resource": "arn:aws:eks:ap-northeast-1:000000000000:cluster/auth-cluster"
+            "Resource": "arn:aws:eks:ap-northeast-1:000000000000:cluster/demo-cluster"
         }
     ]
   }
@@ -71,7 +71,7 @@
   ```
 * EKSクラスタに接続するためのクライアント側の構成を実行
   ```
-  aws eks --region ap-northeast-1 update-kubeconfig --name auth-cluster
+  aws eks --region ap-northeast-1 update-kubeconfig --name demo-cluster
   ```
 * 構成内容を確認
   ```
