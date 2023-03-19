@@ -40,7 +40,7 @@
   ```
   AWS_ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)
 
-  eksctl create iamserviceaccount \;q
+  eksctl create iamserviceaccount \
     --name my-demo-bucket-fullaccess \
     --role-name my-demo-bucket-fullaccess-role  \
     --cluster demo-cluster \
