@@ -264,7 +264,7 @@
 ---
 
 ## ワークの終了
-1. Cloud 9 のターミナルで次のコマンドを実行して Deployment を作成します。
+1. Cloud 9 のターミナルで次のコマンドを実行して Deployment を削除します。
    ```
    kubectl delete -f deployment-python-web-ec2.yaml
    ```
