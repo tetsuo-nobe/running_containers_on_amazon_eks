@@ -467,7 +467,7 @@
    ```
    kubectl delete -f job.yaml
    ``` 
-1. CronJobのマニフェストを確認します。
+1. CronJobのマニフェストを確認します。(Hello from cronjob というメッセージを表示する Job を1 分毎に実行します。）
    ```
    cat cronjob.yaml
    ```
