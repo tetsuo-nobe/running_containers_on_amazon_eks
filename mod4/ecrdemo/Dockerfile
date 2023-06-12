@@ -1,11 +1,16 @@
-# Amazon ECR の Public リポジトリからベースイメージを取得
-FROM public.ecr.aws/ubuntu/ubuntu:18.04
+FROM node:12
 
-# Node.js をインストール
-RUN apt update && apt install -y nodejs
+# アプリケーションディレクトリを作成する
+WORKDIR /usr/src/app
 
-# index.js にアプリのコードを記述
-RUN echo "console.log('Hello, world')" > index.js
+# アプリケーションの依存関係をインストールする
+COPY package*.json ./
 
-# node index.js を実行
-CMD ["node", "index.js"]
+RUN npm install --only=production
+
+# アプリケーションのソースをバンドルする
+COPY . .
+
+EXPOSE 8080
+CMD [ "node", "server.js" ]
+
