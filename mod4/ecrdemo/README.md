@@ -11,18 +11,18 @@
   aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 000000000000.dkr.ecr.ap-northeast-1.amazonaws.com
   ```
 * Docker イメージ をビルド
-  - 次の例では demo0101 をタグとして指定してビルド
+  - 次の例では hellodemo をタグとして指定してビルド
   ```
-  docker build -t demo0101 .
+  docker build -t hellodemo .
 
   ```
 * ビルド完了後、リポジトリにイメージをプッシュできるように、イメージにタグを付け
   ```
-  docker tag demo0101:latest 000000000000.dkr.ecr.ap-northeast-1.amazonaws.com/demo0101:latest
+  docker tag hellodemo:latest 000000000000.dkr.ecr.ap-northeast-1.amazonaws.com/hellodemo:latest
 
   ```
 * リポジトリにこのイメージをプッシュ
   ```
-  docker push 000000000000.dkr.ecr.ap-northeast-1.amazonaws.com/demo0101:latest
+  docker push 000000000000.dkr.ecr.ap-northeast-1.amazonaws.com/hellodemo:latest
 
   ```  
