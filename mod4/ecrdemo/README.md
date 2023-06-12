@@ -1,4 +1,4 @@
-# Amazon ECR にコンテナイメージをpushする
+# Amazon ECR にコンテナイメージを push する
 
 * 下記が使用できる環境が必要
  - docker コマンド
@@ -25,4 +25,8 @@
   ```
   docker push 000000000000.dkr.ecr.ap-northeast-1.amazonaws.com/hellodemo:latest
 
-  ```  
+  ``` 
+  
+* Kubernetes の Deployment のマニフェストにプッシュしたイメージの URI を指定して利用する。（以下のファイルを参照）
+  - deployment-hellodemo.yaml 
+  - service-hellodemo.yaml
