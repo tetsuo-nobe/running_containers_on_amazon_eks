@@ -53,7 +53,6 @@
   - (表示されるまで、しばらく時間がかかる場合があります。)
 * helmdemo/values.yaml の内容を変更してバージョン 2 のコンテナイメージを指定する
   - vim で helmdemo/values.yaml を開き、`version:` の値を `'2'` に変更して保存する
-  - 
 * アプリケーションをバージョン2 にアップグレードする
   ```
   helm upgrade hello-app helmdemo/
