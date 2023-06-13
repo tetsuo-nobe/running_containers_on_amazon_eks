@@ -18,11 +18,20 @@
   ```
 * Chart.yaml の確認
   - helmdemo フォルダ(このフォルダ)にある Chart.yamlを参照
+  ```
+  cat helmdemo/Chart.yaml
+  ```
 * Deployment の定義ファイルの確認
   - helmdemo フォルダ(このフォルダ)にある templates/deployment/hello-deployment.yamlを参照
+  ```
+  cat helmdemo/templates/deployment/hello-deployment.yaml
+  ```
 * values.yaml の確認
   - helmdemo フォルダ(このフォルダ)にあるvalues.yamlを参照
-  - レプリカ 2、コンテナイメージのバージョン 1を指定している。
+  - レプリカ 2、コンテナイメージに tnobe/node-web-hello、コンテナイメージのバージョンに 1を指定していることがわかる。
+  ```
+  cat helmdemo/values.yaml
+  ```
 * `hello-app` アプリケーションとしてデプロイする前にdry-run実行
   ```
   helm install --debug --dry-run hello-app helmdemo/
@@ -40,9 +49,9 @@
   kubectl get svc,po,deploy
   ```
 * service/my-service の EXTERNAL-IP に http:// をつけ、ブラウザでアクセス。
-  - アプリケーションのバージョン1にアクセスできることを確認
+  - アプリケーションのバージョン 1 にアクセスできることを確認
   - (表示されるまで、しばらく時間がかかる場合があります。)
-* helmdemo/values.yaml の内容を変更してバージョン2 のコンテナイメージを指定する
+* helmdemo/values.yaml の内容を変更してバージョン 2 のコンテナイメージを指定する
   - vim で helmdemo/values.yaml を開いて編集
 * アプリケーションをバージョン2 にアップグレードする
   ```
