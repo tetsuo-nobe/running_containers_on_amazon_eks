@@ -1,7 +1,7 @@
 # Amazon EKS で Service や Ingress を作成してみよう
 * マニフェストの内容や、実行結果を確認しながら進めてみましょう。
 * 1 つの EKS クラスタを複数の受講者で共用します。割当てられた IAM ユーザー 名や EKS クラスタの namespaceを正しく使用しましょう。
-* このワークは、**AWS Load Balancer Controller を使用する想定** です。またノードである EC2 インスタンスで IMDSv2 をオプションにしている環境を想定しています。
+* このワークは、**AWS Load Balancer Controller を適用した Amazon EKS クラスターを使用する想定** です。またノードである EC2 インスタンスで IMDSv2 をオプションにしている環境を想定しています。
 ---
 
 ## 環境への接続について
