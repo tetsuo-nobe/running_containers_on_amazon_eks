@@ -213,7 +213,7 @@
 1. DNS 名がメモしたものと一致するロードバランサーを見つけて選択します。一覧表で [タイプ] 列の値が network になっていることを確認します。
 1. Service を削除します。
    ```
-   kubectl delete -f service/service-loadbalancer.yaml 
+   kubectl delete -f service/service-loadbalancer-nlb-ip.yaml 
    ``` 
 1. Service の削除を確認します。**-n の後には自分の Namespace を指定します。**
    ```
