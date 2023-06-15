@@ -193,13 +193,13 @@
 
 1. Cloud9 画面左側から 下記の Service のマニフェストのファイルをダブルクリックして開きます。
    ```
-   running_containers_on_amazon_eks/mod7/service/service-loadbalancer.yaml
+   running_containers_on_amazon_eks/mod7/service/service-loadbalancer-nlb-ip.yaml
    ```
 1. マニフェストの中で **namespace の値を自分に割当てられた値に変更**してファイルを保存します。
 
 1. Cloud 9 のターミナルで次のコマンドを実行して Service を作成します。
    ```
-   kubectl apply -f service/service-loadbalancer.yaml 
+   kubectl apply -f service/service-loadbalancer-nlb-ip.yaml 
    ```
 1. Service を表示します。**-n の後には自分の Namespace を指定します。出力から EXTERNAL-IP の値をメモしておきます。** 
    ```
