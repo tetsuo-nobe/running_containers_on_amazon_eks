@@ -7,7 +7,7 @@
 * **このワーク環境は、ワーク実施時だけの一時的な環境になります。**
 
 ## Minikube のインストール
-1. ユーザーのホームディレクトリに移動し、Dockerがインストールされていることを確認します。
+1. ユーザーのホームディレクトリに移動し、Docker がインストールされていることを確認します。
    ```
    cd
    pwd
@@ -50,15 +50,16 @@
 
 ## Pod の操作
 
-1. Podのマニフェストを確認します。
+1. Pod のマニフェストを確認します。
+  - **Pod で指定しているコンテナイメージ名は何ですか？**
    ```
    cat pod-httpd.yaml
    ```
-1. Podを作成します。
+1. Pod を作成します。
    ```
    kubectl apply -f pod-httpd.yaml
    ```
-1. Podのステータスを確認します。( STATUS が Running になるまで繰り返し実行して下さい。)
+1. Pod のステータスを確認します。( STATUS が Running になるまで繰り返し実行して下さい。)
    ```
    kubectl get pods
    kubectl get pods -o wide
@@ -67,21 +68,21 @@
    ```
    kubectl describe pods my-httpd-pod
    ```
-1. Podのコンテナに接続します。
+1. Pod のコンテナに接続します。
    ```
    kubectl exec -it my-httpd-pod -- /bin/bash
    ```
-1. 現在のindex.htmlの内容を表示した後、exit します。
+1. 現在の index.html の内容を表示した後、exit します。
    ```
    ls
    cd htdocs
    more index.html
    exit
-1. Podを削除します。
+1. Pod を削除します。
    ```
    kubectl delete -f pod-httpd.yaml
    ``` 
-1. Podの削除を確認します。
+1. Pod の削除を確認します。
    ```
    kubectl get pods
    ``` 
@@ -96,47 +97,49 @@
    alias k=kubectl
    ```
 
-1. ConfigMapのマニフェストを確認します。  
+1. ConfigMap のマニフェストを確認します。  
    ```
    cat configmap.yaml
    ```
 
-1. ConfigMapを作成します。
+1. ConfigMap を作成します。
    ```
    k apply -f configmap.yaml
    ```
 
-1. ConfigMapをステータスを確認します。
+1. ConfigMap をステータスを確認します。
    ```
    k get configmaps
    ```
 
-1. ConfigMapの詳細を表示します。
+1. ConfigMap の詳細を表示します。
    ```
    k describe configmap my-configmap
    ```
 
-1. ConfigMapを使用するPodのマニフェストを確認します。  
+1. ConfigMap を使用する Pod のマニフェストを確認します。  
+   - **Pod からどのような方法で ConfigMap の値を参照しているか予想してみて下さい**　
+   - **Pod で ConfigMap の値をどう使用しているか予想してみて下さい**
    ```
    cat pod-configmap.yaml
    ```
 
-1. ConfigMapを使用するPodを作成します。
+1. ConfigMap を使用する Pod を作成します。
    ```
    k apply -f  pod-configmap.yaml
    ```
 
-1. ConfigMapを使用するPodのステータスを確認します。
+1. ConfigMap を使用する Pod のステータスを確認します。
    ```
    k get pods
    ```
 
-1. ConfigMapを使用するPodのログを表示します。
+1. ConfigMap を使用する Pod のログを表示します。
    ```
    k logs  my-pod-configmap
    ```
-
-1. ConfigMapを使用するPodを削除します。
+   - **ConfigMap の値が出力されていることを確認しましょう**
+1. ConfigMap を使用する Pod を削除します。
    ```
    k delete -f pod-configmap.yaml
    ```
