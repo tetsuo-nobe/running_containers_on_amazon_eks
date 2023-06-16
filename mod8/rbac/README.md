@@ -2,7 +2,6 @@
 
 * 前提
   - 対象のEKS クラスター名は demo-cluster 
-  - rbac-lookup コマンドをインストールしている
 
 ## IAM ユーザーの新規作成
 
