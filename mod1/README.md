@@ -88,7 +88,7 @@
    ``` 
 ---
 
-## ConfigMapの操作
+## ConfigMap の操作
 
 1. alias を使って、キータイプ量を減らすようにします。
    - キータイプの効率を考慮し、以降は k で統一します。
@@ -118,6 +118,7 @@
    ```
 
 1. ConfigMap を使用する Pod のマニフェストを確認します。  
+   - **Pod で指定しているコンテナイメージ名は何ですか？**
    - **Pod からどのような方法で ConfigMap の値を参照しているか予想してみて下さい**　
    - **Pod で ConfigMap の値をどう使用しているか予想してみて下さい**
    ```
@@ -135,10 +136,10 @@
    ```
 
 1. ConfigMap を使用する Pod のログを表示します。
+   - **ConfigMap の値が出力されていることを確認しましょう**
    ```
    k logs  my-pod-configmap
    ```
-   - **ConfigMap の値が出力されていることを確認しましょう**
 1. ConfigMap を使用する Pod を削除します。
    ```
    k delete -f pod-configmap.yaml
@@ -146,89 +147,92 @@
 
 ---
 
-## Secretの操作
+## Secret の操作
 
-1. Secretのマニフェストを確認します。  
+1. Secret のマニフェストを確認します。  
    ```
    cat secret.yaml
    ```
 
-1. Secretを作成します。
+1. Secret を作成します。
    ```
    k apply -f secret.yaml
    ```
 
-1. Secretをステータスを確認します。
+1. Secret をステータスを確認します。
    ```
    k get secrets
    ```
 
-1. Secretの詳細を表示します。
+1. Secret の詳細を表示します。
+  - **Secret の値は参照できるでしょうか？**　
    ```
    k describe secret my-secret
    ```
 
-1. Secretを使用するPodのマニフェストを確認します。  
+1. Secret を使用する Pod のマニフェストを確認します。  
    ```
    cat pod-secret.yaml
    ```
 
-1. Secretを使用するPodを作成します。
+1. Secret を使用するPodを作成します。
    ```
    k apply -f  pod-secret.yaml
    ```
 
-1. Secretを使用するPodのステータスを確認します。
+1. Secret を使用するPodのステータスを確認します。
    ```
    k get pods
    ```
 
-1. Secretを使用するPodのログを表示します。
+1. Secret を使用するPodのログを表示します。
    ```
    k logs  my-pod-secret
    ```
 
-1. Secretを使用するPodを削除します。
+1. Secret を使用するPodを削除します。
    ```
    k delete -f pod-secret.yaml
    ```
 ---
 
-## Namespaceの操作
+## Namespace の操作
 
-1. Namespaceのマニフェストを確認します。  
+1. Namespace のマニフェストを確認します。  
    ```
    cat namespace.yaml
    ```
 
-1. Namespaceを作成します。
+1. Namespace を作成します。
    ```
    k apply -f namespace.yaml
    ```
 
-1. Namespaceをステータスを確認します。
+1. Namespace をステータスを確認します。
    ```
    k get namespaces
    ```
-1. Namespaceを指定しているPodのマニフェストを確認します。
+1. Namespace を指定している Pod のマニフェストを確認します。
    ```
    cat pod-nginx.yaml
    ```
 
-1. Namespaceを指定しているPodを作成します。
+1. Namespace を指定している Pod を作成します。
    ```
    k apply -f pod-nginx.yaml
    ```
-1. Namespaceを**指定せず** Podのステータスを確認します。
+1. Namespace を**指定せず** Pod のステータスを確認します。
+   - **Pod の情報は表示されましたか？**
    ```  
    k get pods
    ```
-1. Namespaceを指定して Podのステータスを確認します。
+1. Namespace を指定して Pod のステータスを確認します。
+   - **Pod の情報は表示されましたか？**
    ```
    k get pods -n dev
    ```
 
-1. Namespaceを指定しているPodを削除します。
+1. Namespace を指定している Pod を削除します。
    ```
    k delete -f pod-nginx.yaml 
    ```
