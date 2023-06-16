@@ -23,16 +23,6 @@
   ```
   * IAMユーザー作成後、ARNをコピーしておく
 
-## RBACグループとRBACロールのマップを確認
-
-* rback-lookup コマンドで確認
-  ```
-  rbac-lookup -k group
-
-  kubectl get clusterroles cluster-admin -o yaml
-  ```
-* system:masters グループに cluster-admin ロールがバインドされていることがわかる
-
 ## IAMユーザーとRBACグループのマップを定義しているConfigMapを確認
 
 * aws-auth の ConfigMap を確認
