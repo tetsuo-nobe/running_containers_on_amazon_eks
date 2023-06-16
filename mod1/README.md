@@ -64,7 +64,7 @@
    kubectl get pods
    kubectl get pods -o wide
    ```
-1. Podの詳細を表示します。
+1. Pod の詳細を表示します。
    ```
    kubectl describe pods my-httpd-pod
    ```
