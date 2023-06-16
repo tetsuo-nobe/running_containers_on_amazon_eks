@@ -165,7 +165,7 @@
    ```
 
 1. Secret の詳細を表示します。
-  - **Secret の値は参照できるでしょうか？**　
+   - **Secret の値は参照できるでしょうか？**　
    ```
    k describe secret my-secret
    ```
@@ -175,22 +175,22 @@
    cat pod-secret.yaml
    ```
 
-1. Secret を使用するPodを作成します。
+1. Secret を使用する Pod を作成します。
    ```
    k apply -f  pod-secret.yaml
    ```
 
-1. Secret を使用するPodのステータスを確認します。
+1. Secret を使用する Pod のステータスを確認します。
    ```
    k get pods
    ```
 
-1. Secret を使用するPodのログを表示します。
+1. Secret を使用する Pod のログを表示します。
    ```
    k logs  my-pod-secret
    ```
 
-1. Secret を使用するPodを削除します。
+1. Secret を使用する Pod を削除します。
    ```
    k delete -f pod-secret.yaml
    ```
@@ -240,84 +240,85 @@
 
 ## Deploymentの操作
 
-1. Deploymentのマニフェストを確認します。  
+1. Deployment のマニフェストを確認します。  
+   - **Pod の情報は表示されましたか？**
    ```
    cat deployment.yaml
    ```
 
-1. Deploymentを作成します。 
+1. Deployment を作成します。 
    ```
    k apply -f deployment.yaml
    ```
 
-1. Deploymentのステータスを確認します。
+1. Deployment のステータスを確認します。
    ```
    k get deployments
    ```
 
-1. ReplicaSetのステータスを確認します。
+1. ReplicaSet のステータスを確認します。
    ```
    k get replicasets
    ```
 
-1. Podのステータスを確認します。
+1. Pod のステータスを確認します。
    ```
    k get pods
    ```
 
-1. Deploymentのレプリカ数を3に変更します。
+1. Deployment のレプリカ数を 3 に変更します。
    - (ここでは kubectl scale コマンドを使用していますが、vim を使用できる人はマニフェストで replicas の値を変更して kubectl apply を使用しても OKです。)
    ```
    k scale deployment my-deployment --replicas=3
    ```
 
-1. Deploymentのステータスを確認します。
+1. Deployment のステータスを確認します。
    ```
    k get deployments
    ```
 
-1. ReplicaSetのステータスを確認します。
+1. ReplicaSet のステータスを確認します。
    ```
    k get replicasets
    ```
 
-1. Podのステータスを確認します。
+1. Pod のステータスを確認します。
    ```
    k get pods
    ```
 
-1. Deploymentのレプリカ数を2に変更します。 
+1. Deployment のレプリカ数を2に変更します。 
    - (ここでは kubectl scale コマンドを使用していますが、vim を使用できる人はマニフェストで replicas の値を変更して kubectl apply を使用しても OKです。)
    ```
    k scale deployment my-deployment --replicas=2
    ```
 
-1. Deploymentのステータスを確認します。
+1. Deployment のステータスを確認します。
    ```
    k get deployments
    ```
 
-1. ReplicaSetのステータスを確認します。
+1. ReplicaSet のステータスを確認します。
    ```
    k get replicasets
    ```
 
-1. Podのステータスを確認します。
+1. Pod のステータスを確認します。
    ```
    k get pods
    ```
 
-1. Deploymentを削除します。
+1. Deployment を削除します。
    ```
    k delete -f deployment.yaml
    ```
 
-1. Deploymentのステータスを確認します。
+1. Deployment のステータスを確認します。
    ```
    k get deployments
    ```
 
-1. Podのステータスを確認します。
+1. Pod のステータスを確認します。
    ```
    k get pods
    ```  
@@ -326,33 +327,33 @@
 
 ## Serviceの操作
 
-1. Deploymentを作成します。
+1. Deployment を作成します。
    ```
    k apply -f deployment.yaml
    ```
 
-1. Podのステータスを確認します。
+1. Pod のステータスを確認します。
    ```
    k get pods
    ```
 
-1. Serviceのマニフェストを確認します。  
+1. Service のマニフェストを確認します。  
    ```
    cat service.yaml
    ```
 
-1. Serviceを作成します。
+1. Service を作成します。
    ```
    k apply -f service.yaml
    ```
 
-1. Serviceのステータスを確認します。
+1. Service のステータスを確認します。
    ```
    k get services
    k get services -o wide
    ```
 
-1. Public IPを取得してメモします。
+1. Public IP を取得してメモします。
    ```
    curl http://169.254.169.254/latest/meta-data/public-ipv4
    ```
@@ -361,17 +362,17 @@
    curl (Public IP):30000
    ```
 
-1. 次のようなHTMLが出力されることを確認します。
+1. 次のような HTML が出力されることを確認します。
    ```
    <html><body><h1>It works!</h1></body></html>
    ```
 
-1. Serviceを削除します。
+1. Service を削除します。
    ```
    k delete -f service.yaml
    ```
 
-1. Deploymentを削除します。
+1. Deployment を削除します。
    ```
    k delete -f deployment.yaml
    ```
@@ -391,12 +392,12 @@
 - このタスクはとばして、[ワークの終了](#ワークの終了) 操作を実施しても OK です！
 
 
-1. Deploymentのマニフェスト (image が nginx:1.22.0) を確認します。  
+1. Deployment のマニフェスト (image が nginx:1.22.0) を確認します。  
    ```
    cat deployment-nginx1.22.yaml
    ```
 
-1. Deploymentのマニフェスト (image が nginx:1.23.0) を確認します。  
+1. Deployment のマニフェスト (image が nginx:1.23.0) を確認します。  
    ```
    cat deployment-nginx1.23.yaml
    ```
@@ -406,12 +407,12 @@
    k apply -f deployment-nginx1.22.yaml
    ```
 
-1. Deploymentのステータスを確認します。
+1. Deployment のステータスを確認します。
    ```
    k get deployments -o wide
    ```
 
-1. Podのステータスを確認します。
+1. Pod のステータスを確認します。
    ```
    k get pods
    ```
@@ -421,7 +422,7 @@
    k apply -f deployment-nginx1.23.yaml
    ```
 
-1. Podのステータスを確認します。
+1. Pod のステータスを確認します。
    ```
    k get pods
    ```
@@ -436,17 +437,17 @@
    k rollout undo deployment nginx-deployment  --to-revision 1
    ```
 
-1. Podのステータスを確認します。
+1. Pod のステータスを確認します。
    ```
    k get pods
    ```
 
-1. Deploymentの変更履歴を表示します。 
+1. Deployment の変更履歴を表示します。 
    ```
    k rollout history deployment nginx-deployment
    ```
 
-1. Deploymentを削除します。 
+1. Deployment を削除します。 
    ```
    k delete -f deployment-nginx1.23.yaml
    ```
@@ -454,15 +455,15 @@
 ## (時間に余裕があれば実施して下さい）Job と CronJob の操作
 - このタスクはとばして、[ワークの終了](#ワークの終了) 操作を実施しても OK です！
 
-1. Jobのマニフェストを確認します。
+1. Job のマニフェストを確認します。
    ```
    cat job.yaml
    ```
-1. Jobを作成します。
+1. Job を作成します。
    ```
    kubectl apply -f job.yaml
    ```
-1. Jobにより実行されたPodのステータスを確認します。( STATUS が Completed になるまで繰り返し実行して下さい。)
+1. Job により実行されたPodのステータスを確認します。( STATUS が Completed になるまで繰り返し実行して下さい。)
    ```
    kubectl get pods
    ```
@@ -470,19 +471,19 @@
    ```
    kubectl logs <コピーした Pod名>
    ```
-1. Jobを削除します。
+1. Job を削除します。
    ```
    kubectl delete -f job.yaml
    ``` 
-1. CronJobのマニフェストを確認します。(Hello from cronjob というメッセージを表示する Job を1 分毎に実行します。）
+1. CronJob のマニフェストを確認します。(Hello from cronjob というメッセージを表示する Job を1 分毎に実行します。）
    ```
    cat cronjob.yaml
    ```
-1. CronJobを作成します。
+1. CronJob を作成します。
    ```
    kubectl apply -f cronjob.yaml
    ```
-1. CronJobにより実行されたPodのステータスを確認します。( 2～3分の間に数回実行してCompletedになったPodが増えることを確認します。)
+1. CronJob により実行されたPodのステータスを確認します。( 2～3分の間に数回実行してCompletedになったPodが増えることを確認します。)
    ```
    kubectl get pods
    ```
@@ -490,7 +491,7 @@
    ```
    kubectl logs <コピーした Pod名>
    ```
-1. CronJobを削除します。
+1. CronJob を削除します。
    ```
    kubectl delete -f cronjob.yaml
    ``` 
