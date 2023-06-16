@@ -241,7 +241,8 @@
 ## Deploymentの操作
 
 1. Deployment のマニフェストを確認します。  
-   - **Pod の情報は表示されましたか？**
+   - **作成する Pod のスペックはどこに記載されていますか？**
+   - **作成する Pod の数はどこに記載されていますか？**
    ```
    cat deployment.yaml
    ```
@@ -338,6 +339,7 @@
    ```
 
 1. Service のマニフェストを確認します。  
+   - **作成する Service の Type は何ですか？**
    ```
    cat service.yaml
    ```
@@ -363,6 +365,7 @@
    ```
 
 1. 次のような HTML が出力されることを確認します。
+   - **　Pod に対して curl コマンドからアクセスできることを確認しましょう**
    ```
    <html><body><h1>It works!</h1></body></html>
    ```
@@ -385,7 +388,19 @@
    ```
    k api-resources
    ```
-
+1. 短縮名を使って情報を表示してみましょう。
+   ```
+   k apply -f deployment.yaml
+   k apply -f service.yaml
+   k get deploy
+   k get svc
+   k get po
+   ```
+1. 確認後できたら削除します。
+   ```
+   k deploy -f deployment.yaml
+   k deploy -f service.yaml
+   ```
 ---
 
 ## (時間に余裕があれば実施して下さい）Deploymentの更新の操作
