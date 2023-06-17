@@ -398,8 +398,8 @@
    ```
 1. 確認後できたら削除します。
    ```
-   k deploy -f deployment.yaml
-   k deploy -f service.yaml
+   k delete -f deployment.yaml
+   k delete -f service.yaml
    ```
 ---
 
