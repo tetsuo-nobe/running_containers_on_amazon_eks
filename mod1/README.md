@@ -1,5 +1,6 @@
 # kubectl を使用して kubernetes のリソースを操作してみよう
 * マニフェストの内容や、実行結果を確認しながら進めてみましょう。
+* 参考: [Kubernetes ドキュメント](https://kubernetes.io/ja/docs/home/)
 
 ## 環境への接続について
 
