@@ -238,7 +238,7 @@
    ```
 ---
 
-## Deploymentの操作
+## Deployment の操作
 
 1. Deployment のマニフェストを確認します。  
    - **作成する Pod のスペックはどこに記載されていますか？**
@@ -326,7 +326,7 @@
 
 ---
 
-## Serviceの操作
+## Service の操作
 
 1. Deployment を作成します。
    ```
@@ -359,7 +359,7 @@
    ```
    curl http://169.254.169.254/latest/meta-data/public-ipv4
    ```
-1. curl コマンドを使用してServiceにアクセスします。
+1. curl コマンドを使用して Service にアクセスします。
    ```
    curl (Public IP):30000
    ```
@@ -403,7 +403,7 @@
    ```
 ---
 
-## (時間に余裕があれば実施して下さい）Deploymentの更新の操作
+## (時間に余裕があれば実施して下さい）Deployment の更新の操作
 - このタスクはとばして、[ワークの終了](#ワークの終了) 操作を実施しても OK です！
 
 
@@ -484,13 +484,13 @@
    ```
 1. `kubectl get pods` で表示された Pod の名前をコピーして下記を実行し、Jobの実行結果を確認します。
    ```
-   kubectl logs <コピーした Pod名>
+   kubectl logs <コピーした Pod 名>
    ```
 1. Job を削除します。
    ```
    kubectl delete -f job.yaml
    ``` 
-1. CronJob のマニフェストを確認します。(Hello from cronjob というメッセージを表示する Job を1 分毎に実行します。）
+1. CronJob のマニフェストを確認します。(Hello from cronjob というメッセージを表示する Job を 1 分毎に実行します。）
    ```
    cat cronjob.yaml
    ```
@@ -498,11 +498,11 @@
    ```
    kubectl apply -f cronjob.yaml
    ```
-1. CronJob により実行されたPodのステータスを確認します。( 2～3分の間に数回実行してCompletedになったPodが増えることを確認します。)
+1. CronJob により実行された Pod のステータスを確認します。( 2～3 分の間に数回実行して Completed になった Pod が増えることを確認します。)
    ```
    kubectl get pods
    ```
-1. `kubectl get pods` で表示された Pod のうち、1つのPodの名前をコピーして下記を実行し、CronJobによるJob実行結果を確認します。
+1. `kubectl get pods` で表示された Pod のうち、1 つの Pod の名前をコピーして下記を実行し、CronJob による Job 実行結果を確認します。
    ```
    kubectl logs <コピーした Pod名>
    ```
