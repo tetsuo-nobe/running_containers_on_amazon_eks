@@ -73,12 +73,18 @@
    ```
    kubectl exec -it my-httpd-pod -- /bin/bash
    ```
-1. 現在の index.html の内容を表示した後、exit します。
+1. 現在の index.html の内容を表示します。
    ```
    ls
    cd htdocs
    more index.html
+   ```
+   
+1. Pod のコンテナから exit します。
+   ```
    exit
+   ```
+   
 1. Pod を削除します。
    ```
    kubectl delete -f pod-httpd.yaml
