@@ -73,10 +73,12 @@
    ```
    kubectl exec -it my-httpd-pod -- /bin/bash
    ```
-1. 現在の index.html の内容を表示します。
+1. 次のコマンドを実行し、index.html の内容を表示します。
    ```
-   ls
    cd htdocs
+   ```
+
+   ```
    more index.html
    ```
    
