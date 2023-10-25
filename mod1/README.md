@@ -79,7 +79,7 @@
    ```
 
    ```
-   more index.html
+   cat index.html
    ```
    
 1. Pod のコンテナから exit します。
