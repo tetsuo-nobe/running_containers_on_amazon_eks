@@ -52,7 +52,7 @@
 ## Pod の操作
 
 1. Pod のマニフェストを確認します。
-   - **Pod で指定しているコンテナイメージ httpd はApache HTTP Server のコンテナイメージです **
+   - **Pod で指定しているコンテナイメージ httpd は Apache HTTP Server のコンテナイメージです。**
    ```
    cat pod-httpd.yaml
    ```
