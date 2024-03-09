@@ -52,7 +52,7 @@
 ## Pod の操作
 
 1. Pod のマニフェストを確認します。
-   - **Pod で指定しているコンテナイメージ名は何ですか？**
+   - **Pod で指定しているコンテナイメージ httpd はApache HTTP Server のコンテナイメージです **
    ```
    cat pod-httpd.yaml
    ```
@@ -69,7 +69,7 @@
    ```
    kubectl describe pods my-httpd-pod
    ```
-1. Pod のコンテナに接続します。
+1. Pod のコンテナに接続します。`--` の後の引数はコマンドです。
    ```
    kubectl exec -it my-httpd-pod -- /bin/bash
    ```
