@@ -128,8 +128,9 @@
 
 1. ConfigMap を使用する Pod のマニフェストを確認します。  
    - **Pod で指定しているコンテナイメージ busybox は Linux コマンドを実行したいときに活用できるコンテナイメージです。**
-   - **Pod から Ref や xxx を使用して ConfigMap の値を環境変数として取り込んでいます。**　
-   - **Pod は Linux の env コマンドを発行して環境変数を出力しています。**
+   - **この Pod では、Linux の env コマンドを実行し、環境変数を出力しています。**
+   - **Pod のマニフェストにある `env` は `configMapKeyRef` を使用して ConfigMap の値を `name` で指定した環境変数名で取り込んでいます。**
+   - **Pod のマニフェストにある `envFrom` は `configMapRef` を使用して ConfigMap の値をそのまま環境変数名で取り込んでいます。**
    ```
    cat pod-configmap.yaml
    ```
