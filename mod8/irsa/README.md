@@ -36,7 +36,6 @@
 
 ## IAMロールと紐づくサービスアカウントの作成
 
-* aws-auth の ConfigMap を確認
   ```
   AWS_ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account)
 
