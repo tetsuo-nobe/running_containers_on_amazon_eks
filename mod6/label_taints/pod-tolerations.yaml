@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-tolerations
+  labels:
+    app: nginxserver
+spec:
+  tolerations:
+  - key: "disktype"
+    operator: "Equal"
+    value: "hdd"
+    effect: "NoSchedule"
+  containers:
+  - name:  nginx-container
+    image: nginx
+    ports:
+      - containerPort: 80

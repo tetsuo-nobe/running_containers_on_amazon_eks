@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-nodeselector
+  labels:
+    app: nginxserver
+spec:
+  nodeSelector:
+    disksize: large
+  containers:
+  - name:  nginx-container
+    image: nginx
+    ports:
+      - containerPort: 80
