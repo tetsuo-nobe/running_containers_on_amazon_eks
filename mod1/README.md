@@ -369,7 +369,7 @@
    ```
    curl http://169.254.169.254/latest/meta-data/public-ipv4
    ```
-1. curl コマンドを使用して Service にアクセスします。
+1. curl コマンドを使用して Service にアクセスします。`(Public IP)` の部分は前の手順で表示した IP アドレスの値に置き換えてください。
    ```
    curl (Public IP):30000
    ```
