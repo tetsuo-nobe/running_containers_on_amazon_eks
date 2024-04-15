@@ -140,7 +140,7 @@
    k apply -f  pod-configmap.yaml
    ```
 
-1. ConfigMap を使用する Pod のステータスを確認します。
+1. ConfigMap を使用する Pod のステータスを確認します。今回は `STATUS` が `Completed` になっていることを確認します。
    ```
    k get pods
    ```
