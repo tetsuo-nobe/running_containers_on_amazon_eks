@@ -208,26 +208,26 @@
 
 ## Namespace の操作
 
-1. Namespace のマニフェストを確認します。  
+1. Namespace `dev` のマニフェストを確認します。  
    ```
    cat namespace.yaml
    ```
 
-1. Namespace を作成します。
+1. Namespace `dev` を作成します。
    ```
    k apply -f namespace.yaml
    ```
 
-1. Namespace をステータスを確認します。
+1. 各 Namespace のステータスを確認します。
    ```
    k get namespaces
    ```
-1. Namespace を指定している Pod のマニフェストを確認します。
+1. Namespace `dev` を指定している Pod のマニフェストを確認します。
    ```
    cat pod-nginx.yaml
    ```
 
-1. Namespace を指定している Pod を作成します。
+1. Namespace `dev` を指定している Pod を作成します。
    ```
    k apply -f pod-nginx.yaml
    ```
@@ -236,13 +236,13 @@
    ```  
    k get pods
    ```
-1. Namespace を指定して Pod のステータスを確認します。
+1. Namespace `dev` を指定して Pod のステータスを確認します。
    - **Pod の情報は表示されましたか？**
    ```
    k get pods -n dev
    ```
 
-1. Namespace を指定している Pod を削除します。
+1. Namespace `dev` を指定している Pod を削除します。
    ```
    k delete -f pod-nginx.yaml 
    ```
