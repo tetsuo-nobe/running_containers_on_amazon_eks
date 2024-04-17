@@ -34,14 +34,27 @@
    
 ## kubectl のインストール
 
-1. Cloud 9 のターミナルで次のコマンドを実行します。 
+1. Cloud 9 のターミナルで次のコマンドを実行します。 (下記のコマンドを 1つずつ実行してください）
    ```
    curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.27.5/2023-09-14/bin/linux/amd64/kubectl
+   ```
+
+   ```
    sudo chmod +x ./kubectl
+   ```
+
+   ```
    mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin
+   ```
+
+   ```
    echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
+   ```
+
+   ```
    kubectl version --short --client
    ```
+   
 1. 次の例のようなバージョンが表示されることを確認します。 (バージョン番号は異なっていても問題ありません。)
    ```
    Client Version: v1.27.5-eks-43840fb
