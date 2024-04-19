@@ -2,6 +2,8 @@
 
 ## 講師がガイドする環境を使用してください。
 
+### このワークの目的は、コンテナをアプリケーションとしてビルド・実行するための基本的な手順を体感することです。
+
 ### 準備
 
 1. Docker がインストールされていることを確認します。
@@ -21,38 +23,100 @@
    
 1. 再度、Session Manager に接続します。
 
-### 既存のコンテナイメージを使用してコンテナを動作させてみる
+### 既存のコンテナイメージを使用してコンテナを実行する
 
-1. Apache HTTP Server のコンテナを取得し、ポート 80 を使用してデーモンとして動作させます。
+1. Apache HTTP Server(httpd) のコンテナを取得し、ポート 80 を使用してデーモンとして実行させます。
    ```
    docker run --name my-httpd -dit -p 80:80 httpd
    ```
 
-1. コンテナアプリケーションが動作していることを確認します。CONTAINER ID や NAMES が表示されていることを確認します。
+1. http コンテナが動作していることを確認します。CONTAINER ID や NAMES が表示されていることを確認します。
    ```
    docker ps
    ```
    
-1. コンテナアプリケーションにアクセスします。
+1. http コンテナにアクセスします。
    ```
    curl localhost
    ```
    - `<html><body><h1>It works!</h1></body></html>` と表示されることを確認します。
 
-1. コンテナアプリケーションを停止します。
+1. http コンテナを停止します。
    ```
    docker stop my-httpd
    ```
 
-1. コンテナアプリケーションが動作していないことを確認します。CONTAINER ID や NAMES が表示されていないことを確認します。
+1. http コンテナが動作していないことを確認します。CONTAINER ID や NAMES が表示されていないことを確認します。
    ```
    docker ps
    ```
-1. コンテナを削除します。
+1. http コンテナを削除します。
    ```
    docker ps
    ```
 
-### 新しい コンテナイメージをビルド（構築）して動かしてみよう
+### Web アプリケーションのコンテナイメージをビルド（構築）して実行する
 
-1. 
+1. サンプルの Git リポジトリを取得して今回使用するサンプルのフォルダに移動します。
+   ```
+   git clone https://github.com/tetsuo-nobe/running_containers_on_amazon_eks.git
+   ```
+
+   ```
+   cd running_containers_on_amazon_eks/docker_basic
+   ```
+   
+1. サンプルの アプリケーションのコードを確認します。(Python で Flask という Webアプリケーションフレームワークを使用しています。）
+   ```
+   cat app/app.py
+   ```   
+
+1. サンプルアプリケーションのコンテナイメージをビルドするための Dockerfile を確認します。
+   ```
+   cat Dockerfile
+   ```   
+
+1. サンプルアプリケーションのコンテナイメージをビルドします。
+   ```
+   docker build -t myflask . 
+   ```   
+
+1. サンプルアプリケーションのコンテナを実行します。
+   ```
+   docker run --name myflask1 -dit -p 80:8080 myflask
+   ```   
+
+1. サンプルアプリケーションのコンテナが動作していることを確認します。CONTAINER ID や NAMES が表示されていることを確認します。
+   ```
+   docker ps
+   ```
+   
+1. サンプルアプリケーションのコンテナにアクセスします。
+   ```
+   curl localhost
+   ```
+   - `<h1>Hello, Flask!</h1>` と表示されることを確認します。
+
+1. サンプルアプリケーションのコンテナを停止します。
+   ```
+ 　docker stop myflask1
+   ```
+
+1. サンプルアプリケーションのコンテナを削除します。
+   ```
+ 　docker rm   myflask1
+   ```
+
+1. サンプルアプリケーションのコンテナイメージを削除します。
+   ```
+ 　docker image rm myflask
+   ```
+
+1. 以上で終了です。下記のコマンドで Session Manager を終えてください。
+  ```
+  exit
+  ```
+
+### お疲れさまでした！
+
+
