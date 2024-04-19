@@ -53,7 +53,7 @@
    ```
 1. http コンテナを削除します。
    ```
-   docker my-httpd
+   docker rm my-httpd
    ```
 
 ### Web アプリケーションのコンテナイメージをビルド（構築）して実行する
