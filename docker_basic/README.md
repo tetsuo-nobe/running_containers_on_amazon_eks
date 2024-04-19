@@ -99,22 +99,8 @@
 
 1. サンプルアプリケーションのコンテナを停止します。
    ```
- 　docker stop myflask1
+   docker stop myflask1
    ```
 
-1. サンプルアプリケーションのコンテナを削除します。
-   ```
- 　docker rm   myflask1
-   ```
-
-1. サンプルアプリケーションのコンテナイメージを削除します。
-   ```
- 　docker image rm myflask
-   ```
-
-1. 以上で終了です。下記のコマンドで Session Manager を終えてください。
-   ```
-   exit
-   ```
 
 ### お疲れさまでした！
