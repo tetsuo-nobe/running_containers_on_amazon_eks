@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: my-sa-aws-cli
+  name: my-shell
   labels:
-    app: my-sa-aws-cli
+    app: my-shell
 spec:
-  serviceAccountName: my-demo-bucket-fullaccess
+  serviceAccountName: aws-s3-read
   containers:
   - name:  aws-cli-container
     image: amazon/aws-cli
