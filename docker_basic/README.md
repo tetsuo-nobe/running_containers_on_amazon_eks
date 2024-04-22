@@ -28,7 +28,7 @@
 
 1. Apache HTTP Server(httpd) のコンテナを取得し、ポート 80 を使用してデーモンとして実行させます。
    ```
-   docker run --name my-httpd -dit -p 80:80 httpd
+   docker run --name my-httpd -dit -p 80:80 httpd:2.4.59
    ```
 
 1. http コンテナが動作していることを確認します。CONTAINER ID や NAMES が表示されていることを確認します。
@@ -79,12 +79,12 @@
 
 1. サンプルアプリケーションのコンテナイメージをビルドします。
    ```
-   docker build -t myflask . 
+   docker build -t myflask:1 . 
    ```   
 
 1. サンプルアプリケーションのコンテナを実行します。
    ```
-   docker run --name myflask1 -dit -p 80:8080 myflask
+   docker run --name myflask1 -dit -p 80:8080 myflask:1
    ```   
 
 1. サンプルアプリケーションのコンテナが動作していることを確認します。CONTAINER ID や NAMES が表示されていることを確認します。
@@ -110,7 +110,7 @@
 
 1. サンプルアプリケーションのコンテナイメージを削除します。
    ```
-   docker image rm myflask
+   docker image rm myflask:1
    ```
 
 1. 以上で終了です。
