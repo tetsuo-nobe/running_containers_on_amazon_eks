@@ -5,12 +5,11 @@ env:
     AWS_DEFAULT_REGION: ap-northeast-1
     IMAGE_REPO_NAME: node-web-hello
     IMAGE_TAG: latest
-    AWS_ACCOUNT_ID: 000000000000  # 通常はParameter Store か Secrets Managerから取得
 phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - ECR_URI=https://$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - ECR_URI=https://$ACCOUNTID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - echo ${ECR_URI}
       #- $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - aws ecr get-login-password | docker login --username AWS --password-stdin ${ECR_URI}
@@ -19,10 +18,10 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t $IMAGE_REPO_NAME .
-      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $ACCOUNTID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - docker push $ACCOUNTID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
       
