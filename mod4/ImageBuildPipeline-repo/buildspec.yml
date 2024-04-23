@@ -8,6 +8,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
+      # ACCOUNTID はビルドプロジェクトの環境変数で設定
       - ECR_URI=https://$ACCOUNTID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - echo ${ECR_URI}
       #- $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
