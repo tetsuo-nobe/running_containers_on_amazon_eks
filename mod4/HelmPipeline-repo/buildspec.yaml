@@ -2,6 +2,7 @@ version: 0.2
 env:
   variables:
     EKS_CLUSTER_NAME: "lab2-cluster"
+    # 下記はビルドプロジェクトの環境変数に設定してもよい
     KUBECTL_ROLE_ARN: "arn:aws:iam::123412341234:role/my-ThisAccount-Admin-Role"
 phases:
   install:
