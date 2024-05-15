@@ -10,7 +10,12 @@
 
 ### 準備
 
-1. Docker がインストールされていることを確認します。
+1. Docker をインストールします。
+   ```
+   sudo yum -y install docker
+   ```
+
+1. Docker がインストールされていることを確認します。   
    ```
    docker -v
    ```
