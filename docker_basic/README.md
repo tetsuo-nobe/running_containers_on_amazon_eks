@@ -25,6 +25,11 @@
    sudo usermod -a -G docker ssm-user
    ```
 
+1. Docker デーモンを起動します。
+   ```
+   sudo systemctl start docker
+   ```
+
 1. 下記コマンドでいったん Session Manager を終えます。
    ```
    exit
