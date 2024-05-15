@@ -1,8 +1,6 @@
 # Docker のコンテナを動かしてみよう
 
 ## 講師がガイドする環境を使用してください。
-   - Architecting on AWS の場合
-       - ラボ 1 の EC2 インスタンス **Command Host** に Session Manager で接続してください。
    - Running Containers on Amazon EKS の場合
        - ラボ 2 の EC2 インスタンス Bastion Host に Session Manager で接続してください。
 
@@ -10,10 +8,6 @@
 
 ### 準備
 
-1. Docker をインストールします。
-   ```
-   sudo yum -y install docker
-   ```
 
 1. Docker がインストールされていることを確認します。   
    ```
@@ -23,11 +17,6 @@
 1. 現在の OS ユーザーを docker グループに所属させます。
    ```
    sudo usermod -a -G docker ssm-user
-   ```
-
-1. Docker デーモンを起動します。
-   ```
-   sudo systemctl start docker
    ```
 
 1. 下記コマンドでいったん Session Manager を終えます。
