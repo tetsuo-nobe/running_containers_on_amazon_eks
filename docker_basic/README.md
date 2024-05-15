@@ -2,9 +2,9 @@
 
 ## 講師がガイドする環境を使用してください。
    - Architecting on AWS の場合
-       - ラボ 1 の Bastion Host に Session Manager で接続してください。
+       - ラボ 1 の EC2 インスタンス **Command Host** に Session Manager で接続してください。
    - Running Containers on Amazon EKS の場合
-       - ラボ 2 の Bastion Host に Session Manager で接続してください。
+       - ラボ 2 の EC2 インスタンス Bastion Host に Session Manager で接続してください。
 
 ### このワークの目的は、コンテナをアプリケーションとしてビルド・実行するための基本的な手順を体感することです。
 
