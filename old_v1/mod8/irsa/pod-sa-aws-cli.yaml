@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-sa-aws-cli
+  labels:
+    app: my-sa-aws-cli
+spec:
+  serviceAccountName: my-demo-bucket-fullaccess
+  containers:
+  - name:  aws-cli-container
+    image: amazon/aws-cli
+    command:
+    - sleep
+    - "9999"

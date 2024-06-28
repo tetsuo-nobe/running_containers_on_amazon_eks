@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: red-pod2
+  namespace: prod
+  labels:
+    app:   webserver
+    stack: red
+spec:
+  containers:
+  - name:  nginx-container
+    image: nginx
+    ports:
+      - containerPort: 80

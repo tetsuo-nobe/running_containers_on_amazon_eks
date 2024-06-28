@@ -2,7 +2,43 @@
 * マニフェストの内容や、実行結果を確認しながら進めてみましょう。
 * 参考: [Kubernetes ドキュメント](https://kubernetes.io/ja/docs/home/)
 
+## 環境への接続について
 
+* 講師よりガイドいたします。
+* **このワーク環境は、ワーク実施時だけの一時的な環境になります。**
+
+## Minikube のインストール
+1. ユーザーのホームディレクトリに移動し、Docker がインストールされていることを確認します。
+   ```
+   cd
+   pwd
+   docker -v
+   ```
+1. Minikube をインストールします。
+   ```
+   curl -LO https://github.com/kubernetes/minikube/releases/download/v1.25.2/minikube-linux-amd64
+   sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   sudo yum install -y conntrack
+   ```
+
+## Minikube の起動
+
+1. Minikube を起動してステータスを確認します。 
+   ```
+   minikube start --vm-driver=none
+   minikube status
+   ```
+1. シンボリックリンクで kubectl を使えるようにします。
+   - 参考: [minikube の handbook の kubectl](https://minikube.sigs.k8s.io/docs/handbook/kubectl/)
+   ```
+   sudo ln -s $(which minikube) /usr/local/bin/kubectl
+   ```
+
+1. kubectl を使用できることを確認します。
+   ```
+   kubectl version --short --client
+   ```
+   
 ## ワーク用リポジトリの取得
 
 1. ワーク用リポジトリをクローンして移動します。
@@ -323,15 +359,25 @@
    k apply -f service.yaml
    ```
 
-1. Service のステータスを確認します。**出力から EXTERNAL-IP の値をメモしておきます。**
+1. Service のステータスを確認します。
    ```
    k get services
    k get services -o wide
    ```
 
-1. Webブラウザで新しいタブを開き、次のように URL を指定して It works! という文字を含んだ Web ページが表示されることを確認します。アクセス可能になるまで数分待つ必要があります。
+1. Public IP を取得してメモします。
    ```
-   http://<EXTERNAL-IPの値>
+   curl http://169.254.169.254/latest/meta-data/public-ipv4
+   ```
+1. curl コマンドを使用して Service にアクセスします。`(Public IP)` の部分は前の手順で表示した IP アドレスの値に置き換えてください。
+   ```
+   curl (Public IP):30000
+   ```
+
+1. 次のような HTML が出力されることを確認します。
+   - **Pod に対して curl コマンドからアクセスできることを確認しましょう**
+   ```
+   <html><body><h1>It works!</h1></body></html>
    ```
 
 1. Service を削除します。

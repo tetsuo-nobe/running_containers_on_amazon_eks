@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: myjob
+spec:
+  template:
+    spec:
+      containers:
+      - name: myjob-hello
+        image: busybox
+        command:
+        - /bin/sh
+        - -c
+        - date; echo Hello from job
+      restartPolicy: Never
