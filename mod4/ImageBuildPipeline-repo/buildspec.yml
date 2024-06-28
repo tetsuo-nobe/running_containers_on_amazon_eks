@@ -1,0 +1,27 @@
+﻿# Copyright 2021 Amazon Web Services, Inc. or its affiliates. All rights reserved.
+version: 0.2
+env:
+  variables:
+    IMAGE_REPO_NAME: node-web-hello
+    IMAGE_TAG: latest
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      # ACCOUNTID はビルドプロジェクトの環境変数で設定
+      - ECR_URI=https://$ACCOUNTID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - echo ${ECR_URI}
+      #- $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      - aws ecr get-login-password | docker login --username AWS --password-stdin ${ECR_URI}
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t $IMAGE_REPO_NAME .
+      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $ACCOUNTID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push $ACCOUNTID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      

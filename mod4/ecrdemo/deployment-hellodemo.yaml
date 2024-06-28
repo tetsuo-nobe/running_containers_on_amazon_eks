@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hellodemo-deployment
+  labels:
+    app: hellodemo-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hellodemo
+  template:
+    metadata:
+      labels:
+        app: hellodemo
+    spec:
+      containers:
+      - name:  hellodemo-container
+        image: 000000000000.dkr.ecr.ap-northeast-1.amazonaws.com/hellodemo:latest
+        ports:
+        - containerPort: 8080
+        
