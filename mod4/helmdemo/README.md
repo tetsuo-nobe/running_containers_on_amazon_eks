@@ -1,16 +1,11 @@
-# Helm のデモ
+# Helm でアプリケーションをデプロイしてみよう
 
-* EKS クラスターに接続できる環境を用意
-
-* Helm をインストールする適切なディレクトリに移動。(例： `cd  ~` )
-
-* Helm のインストール 
-  - 次の例では Linux にインストールしてバージョンを確認
+* HOME ディレクトリに移動
   ```
-  curl -sSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
-  helm version --short
+  cd  ~
   ```
-* サンプルを取得して移動
+  
+* ワーク用リポジトリを取得して移動
   ```
   git clone https://github.com/tetsuo-nobe/running_containers_on_amazon_eks
   cd running_containers_on_amazon_eks/mod4
