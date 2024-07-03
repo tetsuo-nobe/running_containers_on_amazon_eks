@@ -89,7 +89,7 @@
 1. ワーク用リポジトリをクローンして移動します。
    ```
    git clone https://github.com/tetsuo-nobe/running_containers_on_amazon_eks.git
-   cd running_containers_on_amazon_eks/mod7
+   cd running_containers_on_amazon_eks/mod6
    ```
 
 ---
