@@ -1,4 +1,4 @@
-# HPA (Horizontal Pod Autoscaler) の設定とデモ
+# HPA (Horizontal Pod Autoscaler) の設定とデモの手順
 
 * HPA (Horizontal Pod Autoscaler) 設定手順
   - https://docs.aws.amazon.com/ja_jp/eks/latest/userguide/horizontal-pod-autoscaler.html
