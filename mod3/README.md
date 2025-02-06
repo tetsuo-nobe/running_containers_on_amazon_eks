@@ -37,7 +37,7 @@ eksctl create cluster \
 --nodes-min 1 \
 --nodes-max 4 \
 --managed \
---version 1.25 \
+--version 1.31 \
 --region ap-northeast-1
 ```
 
