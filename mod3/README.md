@@ -108,9 +108,25 @@ eksctl create cluster \
 --version 1.31 \
 --region ap-northeast-1
 ```
+
 ---
 
 ### eksctlによるクラスター作成のサンプル 5
+
+* Auto Mode を使用するクラスターの作成
+* VPCやサブネットも作成
+
+```
+eksctl create cluster \
+--name=sample5-cluster \
+--enable-auto-mode     \
+--version 1.31         \
+--region ap-northeast-1
+```
+
+---
+
+### eksctlによるクラスター作成のサンプル 6
 
 * Fargateプロファイルを使用するクラスターの作成
 * VPCやサブネットも作成
@@ -119,8 +135,8 @@ eksctl create cluster \
 
 ```
 eksctl create cluster \
---name sample5-cluster \
---version 1.25 \
+--name sample6-cluster \
+--version 1.31 \
 --region ap-northeast-1 \
 --fargate
 ```
