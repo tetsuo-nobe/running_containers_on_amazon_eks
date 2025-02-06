@@ -105,7 +105,7 @@ eksctl create cluster \
 --nodes-max 4 \
 --node-ami-family=Bottlerocket \
 --managed \
---version 1.25 \
+--version 1.31 \
 --region ap-northeast-1
 ```
 ---
