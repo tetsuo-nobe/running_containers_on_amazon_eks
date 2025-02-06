@@ -54,7 +54,7 @@ eksctl create cluster \
 AWS_REGION=ap-northeast-1
 eksctl create cluster \
   --name=sample2-cluster \
-  --version 1.25 \
+  --version 1.31 \
   --nodes=3 --managed \
   --region ${AWS_REGION} --zones ${AWS_REGION}a,${AWS_REGION}c
 ```
