@@ -164,9 +164,9 @@ eksctl create fargateprofile \
   - 下記のように `--dry-run` オプションを使用して構成ファイルのテンプレートを生成可能
     - `eksctl create cluster --name temp-cluster  --dry-run`
   - 構成ファイルの例
-    - clusterconfig_public.yaml
+    - clusterconfig-public.yaml
       - マネージドノードグループをPublicサブネットに配置
-    - clusterconfig_private.yaml
+    - clusterconfig-private.yaml
       - マネージドノードグループをPrivateサブネットに配置
 
 ```
