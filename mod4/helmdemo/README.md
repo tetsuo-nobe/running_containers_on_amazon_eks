@@ -90,3 +90,60 @@
   ```
   helm uninstall hello-app
   ```
+
+---
+
+# Artifact HUB のリポジトリからインストールしてみよう
+
+* bitnami のリポジトリを追加
+  ```
+  helm repo add bitnami https://charts.bitnami.com/bitnami
+  ```
+
+* 全てのリポジトリを表示
+  ```
+  helm search repo
+  ```
+
+* bitnami のリポジトリを表示
+  ```
+  helm search repo bitnami
+  ```
+  
+* bitnami の　nginx をインストール
+  ```
+  helm install my-nginx bitnami/nginx --version 19.0.0
+  ```
+
+* kubectl で Kubernetes オブジェクトを確認
+  ```
+  kubectl get all
+  ```
+
+* インストールした Helm アプリケーションの情報を表示
+  ```
+  helm ls
+  ```
+
+* bitnami の　nginx の Chat パッケージを取得
+  ```
+  helm pull oci://registry-1.docker.io/bitnamicharts/nginx --version 19.0.0
+
+  tar -xzvf nginx-19.0.0.tgz
+  
+  ```
+
+
+* アプリケーションのアンインストール
+  ```
+  helm pull oci://registry-1.docker.io/bitnamicharts/nginx --version 19.0.0
+  ```
+
+
+
+  
+
+
+
+
+
