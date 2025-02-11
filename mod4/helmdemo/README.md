@@ -115,14 +115,14 @@
   helm install my-nginx bitnami/nginx --version 19.0.0
   ```
 
-* kubectl で Kubernetes オブジェクトを確認
-  ```
-  kubectl get all
-  ```
-
 * インストールした Helm アプリケーションの情報を表示
   ```
   helm ls
+  ```
+
+* kubectl で Kubernetes オブジェクトを確認
+  ```
+  kubectl get all
   ```
 
 * bitnami の　nginx の Chat パッケージを取得
