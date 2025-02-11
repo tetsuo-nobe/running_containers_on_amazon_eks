@@ -110,7 +110,7 @@
   helm search repo bitnami
   ```
   
-* bitnami の　nginx をインストール
+* bitnami の nginx をインストール
   ```
   helm install my-nginx bitnami/nginx --version 19.0.0
   ```
