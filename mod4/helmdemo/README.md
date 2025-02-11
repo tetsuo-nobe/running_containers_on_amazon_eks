@@ -120,7 +120,8 @@
   helm ls
   ```
 
-* kubectl で Kubernetes オブジェクトを確認: service/my-nginx の EXTERNAL-IP の値を http:// でアクセスし、nginx が動作していることを確認
+* kubectl で Kubernetes オブジェクトを確認
+  - service/my-nginx の EXTERNAL-IP の値を http:// でアクセスし、nginx が動作していることを確認
   ```
   kubectl get all
   ```
