@@ -121,10 +121,10 @@
   ```
 
 * kubectl で Kubernetes オブジェクトを確認
-  - service/my-nginx の EXTERNAL-IP の値を http:// でアクセスし、nginx が動作していることを確認
   ```
   kubectl get all
   ```
+  - service/my-nginx の EXTERNAL-IP の値を http:// でアクセスし、nginx が動作していることを確認
 
 * bitnami の　nginx の Chat パッケージを取得
   ```
