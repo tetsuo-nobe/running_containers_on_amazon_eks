@@ -137,7 +137,7 @@
 
 * アプリケーションのアンインストール
   ```
-  helm pull oci://registry-1.docker.io/bitnamicharts/nginx --version 19.0.0
+  helm uninstall my-nginx
   ```
 
 
