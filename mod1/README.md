@@ -1,4 +1,4 @@
-# kubectl を使用して kubernetes のリソースを操作してみよう
+# kubectl を使用して kubernetes のオブジェクトを操作してみよう
 * マニフェストの内容や、実行結果を確認しながら進めてみましょう。
 * 参考: [Kubernetes ドキュメント](https://kubernetes.io/ja/docs/home/)
 
