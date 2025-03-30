@@ -43,11 +43,11 @@
     -  このフォルダにある下記のマニフェストを適用する
         - traffic-generator.yaml : サンプルアプリへアクセスを実行
         - sample-app.yaml : コレクターへトレースを送信するサンプルアプリ
-    ```
-    kubectl apply -f traffic-generator.yaml 
-
-    kubectl apply -f sample-app.yaml 
-    ```
+        ```
+        kubectl apply -f traffic-generator.yaml 
+        
+        kubectl apply -f sample-app.yaml 
+        ```
     - OTEL_EXPORTER_OTLP_ENDPOINT の値は、コレクターのサービス名であることを確認
 
 4. AWS マネジメントコンソールから Amazon CloudWatch のページでトレースを表示
