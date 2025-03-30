@@ -15,6 +15,7 @@
 1. AWS Distro for OpenTelemetry (ADOT) のアドオンをのインストール
   - 下記の手順で Amazon EKS にインストール
       - [Installation of AWS Distro for OpenTelemetry using EKS Add-Ons](https://aws-otel.github.io/docs/getting-started/adot-eks-add-on/installation)
+  - ★ EKS Pod Identity のロールは未設定でもよい
 
 2. Collectorの作成  (参考: [OTLP Ingest Collector Configuration](https://aws-otel.github.io/docs/getting-started/adot-eks-add-on/config-otlp-ingest))
     - 2-1: OIDC 有効化
