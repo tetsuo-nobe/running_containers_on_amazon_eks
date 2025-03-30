@@ -19,14 +19,15 @@
 2. Collectorの作成  (参考: [OTLP Ingest Collector Configuration](https://aws-otel.github.io/docs/getting-started/adot-eks-add-on/config-otlp-ingest))
     - 2-1: OIDC 有効化
     ```
-    eksctl utils associate-iam-oidc-provider --cluster xray-cluster --approve
+    cluster_name=xray-cluster
+    eksctl utils associate-iam-oidc-provider --cluster ${cluster_name} --approve
     ```
 
     - 2-2: IRSA作成
     ```
     eksctl create iamserviceaccount \
     --name adot-col-otlp-ingest \
-    --cluster xray-cluster \
+    --cluster ${cluster_name} \
     --attach-policy-arn arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess \
     --approve 
     ```
