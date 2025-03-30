@@ -39,9 +39,9 @@
             kubectl apply -f collector-config-xray.yaml
             ```
         - コレクターの Deployment である my-collector-xray-collector が起動していることを確認
-          　```
+        ```
             kubectl get deploy
-            ```
+        ```
 
 3. サンプルアプリの実行　(参考: [Deploy a sample application to test the AWS Distro for OpenTelemetry Collector](https://aws-otel.github.io/docs/getting-started/adot-eks-add-on/sample-app))
     -  このフォルダにある下記のマニフェストを適用する
