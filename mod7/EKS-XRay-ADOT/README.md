@@ -8,6 +8,10 @@
 
 ## 構成手順
 
+0. 事前準備
+  - 下記の手順を実施
+      - [Requirements for Getting Started with AWS Distro for OpenTelemetry using EKS Add-Ons](https://aws-otel.github.io/docs/getting-started/adot-eks-add-on/requirements)
+
 1. AWS Distro for OpenTelemetry (ADOT) のアドオンをのインストール
   - 下記の手順で Amazon EKS にインストール
       - [Installation of AWS Distro for OpenTelemetry using EKS Add-Ons](https://aws-otel.github.io/docs/getting-started/adot-eks-add-on/installation)
