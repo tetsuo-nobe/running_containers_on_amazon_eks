@@ -35,6 +35,9 @@
     - 2-3: Collector 作成
         -  このフォルダにある下記のマニフェストを適用する
             - collector-config-xray.yaml : コレクターのマニフェスト
+            ```
+            kubectl apply -f collector-config-xray.yaml
+            ```
 
 3. サンプルアプリの実行　(参考: [Deploy a sample application to test the AWS Distro for OpenTelemetry Collector](https://aws-otel.github.io/docs/getting-started/adot-eks-add-on/sample-app))
     -  このフォルダにある下記のマニフェストを適用する
