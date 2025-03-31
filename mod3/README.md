@@ -30,8 +30,8 @@
 
 ```
 eksctl create cluster \
---name sample1-cluster \
---nodegroup-name sample1-nodes \
+--name sample-cluster \
+--nodegroup-name sample-nodes \
 --node-type t3.small \
 --nodes 3 \
 --nodes-min 1 \
@@ -53,7 +53,7 @@ eksctl create cluster \
 ```
 AWS_REGION=ap-northeast-1
 eksctl create cluster \
-  --name=sample2-cluster \
+  --name=sample-cluster \
   --version 1.31 \
   --nodes=3 --managed \
   --region ${AWS_REGION} --zones ${AWS_REGION}a,${AWS_REGION}c
@@ -69,10 +69,10 @@ eksctl create cluster \
 
 ```
 eksctl create cluster \
---name sample3-cluster \
+--name sample-cluster \
 --vpc-public-subnets subnet-1111111,subnet-2222222  \
 --vpc-private-subnets subnet-3333333,subnet-4444444 \
---nodegroup-name sample3-nodes \
+--nodegroup-name sample-nodes \
 --node-private-networking \
 --node-type t3.small \
 --nodes 3 \
@@ -93,10 +93,10 @@ eksctl create cluster \
 
 ```
 eksctl create cluster \
---name sample3-cluster \
+--name sample-cluster \
 --vpc-public-subnets subnet-1111111,subnet-2222222  \
 --vpc-private-subnets subnet-3333333,subnet-4444444 \
---nodegroup-name sample3-nodes \
+--nodegroup-name sample-nodes \
 --node-private-networking \
 --node-type t3.small \
 --nodes 3 \
@@ -120,10 +120,10 @@ eksctl create cluster \
 
 ```
 eksctl create cluster \
---name sample4-cluster \
+--name sample-cluster \
 --vpc-public-subnets subnet-1111111,subnet-2222222  \
 --vpc-private-subnets subnet-3333333,subnet-4444444 \
---nodegroup-name sample4-nodes \
+--nodegroup-name sample-nodes \
 --node-private-networking \
 --node-type t3.small \
 --nodes 3 \
@@ -144,7 +144,7 @@ eksctl create cluster \
 
 ```
 eksctl create cluster \
---name=sample5-cluster \
+--name=sample-cluster \
 --enable-auto-mode     \
 --version 1.31         \
 --region ap-northeast-1
@@ -161,7 +161,7 @@ eksctl create cluster \
 
 ```
 eksctl create cluster \
---name sample6-cluster \
+--name sample-cluster \
 --version 1.31 \
 --region ap-northeast-1 \
 --fargate
