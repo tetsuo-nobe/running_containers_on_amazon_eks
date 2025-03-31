@@ -17,7 +17,7 @@
         - [Installation of AWS Distro for OpenTelemetry using EKS Add-Ons](https://aws-otel.github.io/docs/getting-started/adot-eks-add-on/installation)
     - ★ AWS マネジメントコンソールからインストールする場合、EKS Pod Identity のロールは未設定でもよい
     - ★ AWS CLI でインストールする場合、下記でよい。(--configuration-values オプションは不要)
-        ````
+        ```
         cluster_name=xray-cluster
         aws eks create-addon --addon-name adot --cluster-name ${cluster_name}
         ```
