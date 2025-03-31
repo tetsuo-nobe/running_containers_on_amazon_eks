@@ -43,7 +43,7 @@ eksctl create cluster \
 
 ---
 
-### eksctlによるクラスター作成のサンプル 2  (AZを指定）
+### eksctlによるクラスター作成のサンプル (AZを指定）
 
 * VPCやサブネットも作成
 * AZは指定
