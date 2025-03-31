@@ -21,7 +21,7 @@
 * IAMロールに設定する信頼ポリシー: trust-eks-fargate-pod.json
 
 ---
-### eksctlによるクラスター作成のサンプル 1
+### eksctlによるクラスター作成のサンプル 
 
 * VPCやサブネットも作成
 * マネージドノードグループも作成
@@ -43,7 +43,7 @@ eksctl create cluster \
 
 ---
 
-### eksctlによるクラスター作成のサンプル 2
+### eksctlによるクラスター作成のサンプル 2  (AZを指定）
 
 * VPCやサブネットも作成
 * AZは指定
@@ -60,7 +60,7 @@ eksctl create cluster \
 ```
 ---
 
-### eksctlによるクラスター作成のサンプル 3
+### eksctlによるクラスター作成のサンプル  (既存の VPC のサブネットを指定）
 
 * VPCやサブネットは事前に作成しておく
 * サブネットIDを指定する
@@ -83,8 +83,34 @@ eksctl create cluster \
 --region ap-northeast-1
 ```
 ---
+### eksctlによるクラスター作成のサンプル (OIDC プロバイダを作成）
 
-### eksctlによるクラスター作成のサンプル 4
+* VPCやサブネットは事前に作成しておく
+* サブネットIDを指定する
+* マネージドノードグループも作成
+  - マネージドノードグループはPrivateサブネットに作成
+* OIDC プロバイダも作成
+
+```
+eksctl create cluster \
+--name sample3-cluster \
+--vpc-public-subnets subnet-1111111,subnet-2222222  \
+--vpc-private-subnets subnet-3333333,subnet-4444444 \
+--nodegroup-name sample3-nodes \
+--node-private-networking \
+--node-type t3.small \
+--nodes 3 \
+--nodes-min 1 \
+--nodes-max 4 \
+--managed \
+--version 1.31 \
+--region ap-northeast-1 \
+--with-oidc
+```
+
+---
+
+### eksctlによるクラスター作成のサンプル (AMI タイプを指定）
 
 * VPCやサブネットは事前に作成しておく
 * サブネットIDを指定する
@@ -111,7 +137,7 @@ eksctl create cluster \
 
 ---
 
-### eksctlによるクラスター作成のサンプル 5
+### eksctlによるクラスター作成のサンプル (Auto Mode クラスター作成)
 
 * Auto Mode を使用するクラスターの作成
 * VPCやサブネットも作成
@@ -126,7 +152,7 @@ eksctl create cluster \
 
 ---
 
-### eksctlによるクラスター作成のサンプル 6
+### eksctlによるクラスター作成のサンプル (Fargate プロファイルのみを使用するクラスタ）
 
 * Fargateプロファイルを使用するクラスターの作成
 * VPCやサブネットも作成
