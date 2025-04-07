@@ -26,7 +26,7 @@
    ```
    aws sts get-caller-identity
    ```
-1. 出力された Arn に、**my-EC2-EKS-DesclibeCluster-Role** という文字が含まれていることを確認します。
+1. 出力された Arn に、**my-EC2-AdminAccess-Role** という文字が含まれていることを確認します。
 
 ---
    
