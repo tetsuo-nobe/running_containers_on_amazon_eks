@@ -161,7 +161,7 @@
    eksctl delete cluster --name my-cluster-${YOUR_NUMBER} --region ap-northeast-1
    ```
 
-1. クラスター削除が完了するまで約 15分～20分ほど待ちます。
+1. クラスター削除が完了するまで約 10分～15分ほど待ちます。
     Cloud9 のページやターミナルはそのままにしておいてください。
    
 1. 削除完了後、Web ブラウザで Cloud 9 IDE のタブを閉じます。
