@@ -158,7 +158,7 @@
 ## ワークの終了
 1. Cloud 9 のターミナルで次のコマンドを実行して Amazon EKS クラスターを削除します。
    ```
-   eksctl delete cluster --name my-cluster-${YOUR_NUMBER}
+   eksctl delete cluster --name my-cluster-${YOUR_NUMBER} --region ap-northeast-1
    ```
 
 1. クラスター削除が完了するまで約 15分～20分ほど待ちます。
