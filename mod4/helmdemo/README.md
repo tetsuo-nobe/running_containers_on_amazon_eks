@@ -12,17 +12,17 @@
 
   ```
 * Chart.yaml の確認
-  - helmdemo フォルダ(このフォルダ)にある Chart.yamlを参照
+  - helmdemo フォルダにある Chart.yamlを参照
   ```
   cat helmdemo/Chart.yaml
   ```
 * Deployment の定義ファイルの確認
-  - helmdemo フォルダ(このフォルダ)にある templates/deployment/hello-deployment.yamlを参照
+  - helmdemo フォルダにある templates/deployment/hello-deployment.yamlを参照
   ```
   cat helmdemo/templates/deployment/hello-deployment.yaml
   ```
 * values.yaml の確認
-  - helmdemo フォルダ(このフォルダ)にあるvalues.yamlを参照
+  - helmdemo フォルダにあるvalues.yamlを参照
   - レプリカ 2、コンテナイメージに tnobe/node-web-hello、コンテナイメージのバージョンに 1を指定していることがわかる。
   ```
   cat helmdemo/values.yaml
