@@ -144,6 +144,9 @@
     cat config
     ```
 
+    ```
+    cd ~/environment/
+    ```
 ---
 
 ## ワークの終了
