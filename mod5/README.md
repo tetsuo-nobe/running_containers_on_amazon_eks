@@ -82,7 +82,7 @@ EOF
 ### AWS マネジメントコンソールで 作成したクラスターの情報を参照できるようにする
 
 ```
-eksctl create iamidentitymapping --cluster karpenter-cluster --arn arn:aws:iam::146230907561:role/Admin --group system:masters --username isengardAdminRole
+eksctl create iamidentitymapping --cluster karpenter-cluster --arn arn:aws:iam::${AWS_ACCOUNT_ID}:role/Admin --group system:masters --username isengardAdminRole
 ```
 
 ### Karpenter のインストール
