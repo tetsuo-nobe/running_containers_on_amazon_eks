@@ -14,26 +14,26 @@
 * Chart.yaml の確認
   - helmdemo フォルダにある Chart.yamlを参照
   ```
-  cat helmdemo/Chart.yaml
+  cat helmdemo4i/Chart.yaml
   ```
 * Deployment の定義ファイルの確認
   - helmdemo フォルダにある templates/deployment/hello-deployment.yamlを参照
   ```
-  cat helmdemo/templates/deployment/hello-deployment.yaml
+  cat helmdemo4i/templates/deployment/hello-deployment.yaml
   ```
 * values.yaml の確認
   - helmdemo フォルダにあるvalues.yamlを参照
   - レプリカ 2、コンテナイメージに tnobe/node-web-hello、コンテナイメージのバージョンに 1を指定していることがわかる。
   ```
-  cat helmdemo/values.yaml
+  cat helmdemo4i/values.yaml
   ```
 * `hello-app` アプリケーションとしてデプロイする前にdry-run実行
   ```
-  helm install --debug --dry-run hello-app helmdemo/
+  helm install --debug --dry-run hello-app helmdemo4i/
   ``` 
 * `hello-app` アプリケーションとしてデプロイ
   ```
-  helm install hello-app helmdemo/
+  helm install hello-app helmdemo4i/
   ``` 
 * アプリケーションのステータスの確認
   ```
@@ -50,22 +50,22 @@
 * helmdemo/values.yaml の内容を変更してバージョン 2 のコンテナイメージを指定する
   - あらかじめ用意されている version に 2 を指定した values.yaml.v2 を適用する 
   ```
-  mv helmdemo/values.yaml  helmdemo/values.yaml.v1
+  mv helmdemo4i/values.yaml  helmdemo4i/values.yaml.v1
   ```
 
   ```
-  mv helmdemo/values.yaml.v2  helmdemo/values.yaml
+  mv helmdemo4i/values.yaml.v2  helmdemo4i/values.yaml
   ```
   
   - vim を使える方は helmdemo/values.yaml を開き、`version:` の値を `'2'` に変更して保存してもかまいません
   - コンテナイメージのバージョンに 2 を指定していることを確認します。
   ```
-  cat helmdemo/values.yaml
+  cat helmdemo4i/values.yaml
   ```
 
 * アプリケーションをバージョン2 にアップグレードする
   ```
-  helm upgrade hello-app helmdemo/
+  helm upgrade hello-app helmdemo4i/
   ```
 * アプリケーションのステータスの確認
   ```
