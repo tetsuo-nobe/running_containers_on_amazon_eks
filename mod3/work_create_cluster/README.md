@@ -34,7 +34,7 @@
 
 1. Cloud 9 のターミナルで次のコマンドを実行します。 (下記のコマンドを 1つずつ実行してください）
    ```
-   curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.31.4/2025-01-10/bin/darwin/amd64/kubectl
+   curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.31.3/2024-12-12/bin/linux/amd64/kubectl
    ```
 
    ```
