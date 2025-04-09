@@ -30,7 +30,7 @@ kubectl autoscale --name hpa-php-apache deployment php-apache --cpu-percent=50 -
 ```
 
 * [参考] マニフェストを使っての HPA リソースの設定も可能です。
-    - 例：このREADME.mdと同じフォルダにあるマニフェストを使う場合は下記を実行
+    - 例：このREADME.mdと同じフォルダにある hpa.yaml を作成して設定する場合は下記を実行
     ```
     kubectl apply -f hpa.yaml
     ```
