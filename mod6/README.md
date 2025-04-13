@@ -97,7 +97,7 @@
 
 1. Cloud9 画面左側から 下記の Service のマニフェストのファイルをダブルクリックして開きます。
    ```
-   running_containers_on_amazon_eks/mod7/deployment-python-web-ec2.yaml
+   running_containers_on_amazon_eks/mod6/deployment-python-web-ec2.yaml
    ```
 1. マニフェストの中で **namespace の値を自分に割当てられた値に変更**してファイルを保存します。
 
@@ -116,7 +116,7 @@
 
 1. Cloud9 画面左側から 下記の Service のマニフェストのファイルをダブルクリックして開きます。
    ```
-   running_containers_on_amazon_eks/mod7/service/service-clusterip.yaml
+   running_containers_on_amazon_eks/mod6/service/service-clusterip.yaml
    ```
 1. マニフェストの中で **namespace の値を自分に割当てられた値に変更**してファイルを保存します。
 
@@ -169,7 +169,7 @@
 
 1. Cloud9 画面左側から 下記の Service のマニフェストのファイルをダブルクリックして開きます。
    ```
-   running_containers_on_amazon_eks/mod7/service/service-nodeport.yaml
+   running_containers_on_amazon_eks/mod6/service/service-nodeport.yaml
    ```
 1. マニフェストの中で **namespace の値を自分に割当てられた値に変更**してファイルを保存します。
 
@@ -207,7 +207,7 @@
 
 1. Cloud9 画面左側から 下記の Service のマニフェストのファイルをダブルクリックして開きます。
    ```
-   running_containers_on_amazon_eks/mod7/service/service-loadbalancer-nlb-ip.yaml
+   running_containers_on_amazon_eks/mod6/service/service-loadbalancer-nlb-ip.yaml
    ```
 1. マニフェストの中で **namespace の値を自分に割当てられた値に変更**してファイルを保存します。
 
@@ -239,7 +239,7 @@
 
 1. Cloud9 画面左側から 下記の Service のマニフェストのファイルをダブルクリックして開きます。
    ```
-   running_containers_on_amazon_eks/mod7/ingress/ingress-alb-ip.yaml
+   running_containers_on_amazon_eks/mod6/ingress/ingress-alb-ip.yaml
    ```
 1. マニフェストの中で **2箇所のnamespace の値を自分に割当てられた値に変更**してファイルを保存します。**(2箇所あるので注意しましょう。)**
 
