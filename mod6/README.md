@@ -266,8 +266,18 @@
 1. ページ下部にある [ターゲット (Targets)] タブをクリックします。[IP アドレス (IP Address)] に表示されている IPアドレスが、メモしておいた Pod の IPアドレスと同じであることを確認します。
 1. Cloud 9 のターミナルから次のコマンドを実行して、Ingressを削除します。
    ```
-   kubectl delete -f ingress/ingress-alb-ip.yaml
-   ``` 
+   kubectl delete ingress my-ingress-alb-ip -n student99
+   ```
+
+   ```
+   kubectl delete ingressClass awesome-class 
+   ```
+
+   ```
+   kubectl delete service my-service-ingress -n student99
+   ```
+
+   
 1. Ingressの削除を確認します。**-n の後には自分の Namespace を指定します。**
    ```
    kubectl get ingress -n student99
