@@ -145,8 +145,6 @@
      <body>
        <H1>Top Page</H1>
        <H3>Python Web App using Flask</H3>
-       <H4>Host: ip-192-168-32-186.ap-northeast-1.compute.internal</H4>
-       <H4>AZ: ap-northeast-1a</H4>
      </body>
    </html>
    ```
