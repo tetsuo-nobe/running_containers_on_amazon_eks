@@ -149,7 +149,7 @@ eksctl create cluster \
 --region ap-northeast-1
 ```
 
-### eksctlによるクラスター作成のサンプル (既存の VPC を指定して Auto Mode クラスター作成)
+### eksctlによるクラスター作成のサンプル (既存の VPC のサブネットを指定して Auto Mode クラスター作成)
 
 ```
 eksctl create cluster \
