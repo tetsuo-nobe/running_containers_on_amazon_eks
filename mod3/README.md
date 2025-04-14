@@ -154,7 +154,10 @@ eksctl create cluster \
 ### eksctlによるクラスター作成のサンプル (既存の VPC のサブネットを指定して Auto Mode で作成)
 
 * Auto Mode を使用するクラスターの作成
-* ノードは Private サブネットに作成される
+* 下記例の場合 ノードは Private サブネットに作成される
+    - `--vpc-public-subnets` の指定も可能
+    - その場合、ノードは Public サブネットに作成される
+    - `--vpc-private-subnets` と `--vpc-public-subnets` の両方を指定した場合はノードは Private サブネットに作成される
 
 ```
 eksctl create cluster \
