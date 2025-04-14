@@ -149,6 +149,18 @@ eksctl create cluster \
 --region ap-northeast-1
 ```
 
+### eksctlによるクラスター作成のサンプル (既存の VPC を指定して Auto Mode クラスター作成)
+
+```
+eksctl create cluster \
+--name sample-cluster \
+--vpc-public-subnets subnet-1111111,subnet-2222222  \
+--vpc-private-subnets subnet-3333333,subnet-4444444 \
+--version 1.31 \
+--enable-auto-mode \
+--region ap-northeast-1
+```
+
 ---
 
 ### eksctlによるクラスター作成のサンプル (Fargate プロファイルのみを使用するクラスタ）
