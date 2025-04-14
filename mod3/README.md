@@ -140,22 +140,26 @@ eksctl create cluster \
 
 * Auto Mode を使用するクラスターの作成
 * VPCやサブネットも作成
+    - 指定したリージョンのすべての AZ で Public と Private のサブネットを作成
+* ノードは Private サブネットに作成される
 
 ```
 eksctl create cluster \
---name=sample-cluster \
+--name sample-cluster \
 --enable-auto-mode     \
 --version 1.31         \
 --region ap-northeast-1
 ```
 
-### eksctlによるクラスター作成のサンプル (既存の VPC のサブネットを指定して Auto Mode クラスター作成)
+### eksctlによるクラスター作成のサンプル (既存の VPC のサブネットを指定して Auto Mode で作成)
+
+* Auto Mode を使用するクラスターの作成
+* ノードは Private サブネットに作成される
 
 ```
 eksctl create cluster \
 --name sample-cluster \
---vpc-public-subnets subnet-1111111,subnet-2222222  \
---vpc-private-subnets subnet-3333333,subnet-4444444 \
+--vpc-private-subnets subnet-1111111,subnet-2222222 \
 --version 1.31 \
 --enable-auto-mode \
 --region ap-northeast-1
