@@ -271,10 +271,6 @@
    ```
 
    ```
-   kubectl delete ingressClass awesome-class 
-   ```
-
-   ```
    kubectl delete service my-service-ingress -n student99
    ```
 
