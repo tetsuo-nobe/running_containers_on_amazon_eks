@@ -13,13 +13,6 @@ spec:
     app: python-web-ec2
 ---
 apiVersion: networking.k8s.io/v1
-kind: IngressClass
-metadata:
-  name: awesome-class
-spec:
-  controller: ingress.k8s.aws/alb
----
-apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-ingress-alb-ip
