@@ -103,7 +103,6 @@
 1. マニフェストの中で **namespace の値を自分に割当てられた値に変更**してファイルを保存します。
 
 1. Cloud 9 のターミナルで次のコマンドを実行して Deployment を作成します。
-   - (この Deployment により起動されるアプリでは、EC2 の IMDSv1を使用してインスタンスメタデータの取得を有効化しておく必要があります。ワークの環境では有効化しています。）
    ```
    kubectl apply -f deployment-python-web-ec2.yaml
    ```
