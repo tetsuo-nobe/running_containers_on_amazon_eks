@@ -112,7 +112,7 @@
   
 * bitnami の nginx をインストール
   ```
-  helm install my-nginx bitnami/nginx --version 19.0.0
+  helm install my-nginx-(ユニークな文字） bitnami/nginx --version 19.0.0
   ```
 
 * インストールした Helm アプリケーションの情報を表示
