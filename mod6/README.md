@@ -57,8 +57,8 @@
    
 1. 次の例のようなバージョンが表示されることを確認します。 (バージョン番号は異なっていても問題ありません。)
    ```
-   Client Version: v1.33.3-eks-59bf375
-   Kustomize Version: v5.4.2b
+   Client Version: v1.33.3-eks-3abbec1
+   Kustomize Version: v5.6.0
    ```
 ---
 
