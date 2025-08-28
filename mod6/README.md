@@ -36,7 +36,7 @@
 
 1. Cloud 9 のターミナルで次のコマンドを実行します。 (下記のコマンドを 1つずつ実行してください）
    ```
-   curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.31.3/2024-12-12/bin/linux/amd64/kubectl
+   curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.33.3/2025-08-03/bin/linux/amd64/kubectl
    ```
 
    ```
@@ -57,7 +57,7 @@
    
 1. 次の例のようなバージョンが表示されることを確認します。 (バージョン番号は異なっていても問題ありません。)
    ```
-   Client Version: v1.31.3-eks-59bf375
+   Client Version: v1.33.3-eks-59bf375
    Kustomize Version: v5.4.2b
    ```
 ---
