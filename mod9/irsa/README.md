@@ -21,7 +21,7 @@
             "Sid": "VisualEditor1",
             "Effect": "Allow",
             "Action": "s3:*",
-            "Resource": "arn:aws:s3:::tnobe-eks-irsa-demoexit"
+            "Resource": "arn:aws:s3:::tnobe-eks-irsa-demo"
         }
     ]
   }
