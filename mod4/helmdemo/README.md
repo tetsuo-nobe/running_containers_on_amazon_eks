@@ -112,7 +112,7 @@
   
 * bitnami の nginx をインストール
   ```
-  helm install my-nginx bitnami/nginx --version 19.0.0
+  helm install my-nginx bitnami/nginx 
   ```
 
 * インストールした Helm アプリケーションの情報を表示
@@ -126,11 +126,11 @@
   ```
   - service/my-nginx の EXTERNAL-IP の値を http:// でアクセスし、nginx が動作していることを確認
 
-* bitnami の　nginx の Chat パッケージを取得
+* bitnami の　nginx の Chat パッケージを取得し、nginx の tgz 形式のファイルがダウンロードされていることを確認
   ```
-  helm pull oci://registry-1.docker.io/bitnamicharts/nginx --version 19.0.0
+  helm pull oci://registry-1.docker.io/bitnamicharts/nginx 
 
-  tar -xzvf nginx-19.0.0.tgz
+  ls -la
   
   ```
 
