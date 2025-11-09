@@ -126,7 +126,7 @@
   ```
   - service/my-nginx の EXTERNAL-IP の値を http:// でアクセスし、nginx が動作していることを確認
 
-* bitnami の　nginx の Chat パッケージを取得し、nginx の tgz 形式のファイルがダウンロードされていることを確認
+* bitnami の nginx の Chat パッケージを取得し、nginx の tgz 形式のファイルがダウンロードされていることを確認
   ```
   helm pull oci://registry-1.docker.io/bitnamicharts/nginx 
 
