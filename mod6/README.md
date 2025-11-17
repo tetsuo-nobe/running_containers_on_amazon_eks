@@ -133,10 +133,10 @@
    ```
    kubectl run bastion --rm -it  -n student99 --image nginx  -- /bin/bash
    ```
-1. Pod から 次の 2つのcurl コマンドを使用して Service にアクセスしてみます。
+1. Pod から 次の 2つのcurl コマンドを使用して Service にアクセスしてみます。**student99 の 99 はを自分に割当てられた値に変更します。**
    ```
    curl <CLUSTER-IPの値>
-   curl my-service-clusterip
+   curl my-service-clusterip.student99
    ```
 1. curl コマンドの結果、次のような　HTML が表示されることを確認します。
    ```
